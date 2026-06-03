@@ -1,0 +1,1 @@
+FX Sends are similar to Stem Buses in that they must also be configured as a **Bus** rather than a **Channel**. However, unlike Stem Buses, when you want to apply TAM or TAMD to an FX Send, you must load YSFX as **the last** insert on your FX Send track. This configuration helps to reduce potential issues with phase that may occur if TAM or TAMD were set to **Channel** mode.

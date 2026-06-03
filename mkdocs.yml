@@ -1,0 +1,71 @@
+site_name: THS and TAMD Outside of Reaper
+
+theme:
+  name: material
+  features:
+    - navigation.footer
+  palette: 
+
+    # Palette toggle for light mode
+    - scheme: default
+      toggle:
+        icon: material/brightness-7 
+        name: Switch to dark mode
+
+    # Palette toggle for dark mode
+    - scheme: slate
+      toggle:
+        icon: material/brightness-4
+        name: Switch to light mode
+
+markdown_extensions:
+  - attr_list
+  - md_in_html
+  - pymdownx.blocks.caption
+  - pymdownx.arithmatex:
+      generic: true
+  - admonition
+  - pymdownx.details
+  - pymdownx.superfences
+  - footnotes
+
+extra_javascript:
+  - javascripts/mathjax.js
+  - https://unpkg.com/mathjax@3/es5/tex-mml-chtml.js
+  - javascripts/katex.js
+  - https://unpkg.com/katex@0/dist/katex.min.js
+  - https://unpkg.com/katex@0/dist/contrib/auto-render.min.js
+
+extra_css:
+  - https://unpkg.com/katex@0/dist/katex.min.css
+
+plugins:
+  - search
+  - glightbox:
+      background: none
+
+nav:
+  - Main Guide:
+    - Overview: Main_Guide/Overview.md
+    - Getting Started:
+      - Plugins: Main_Guide/Plugins.md
+      - JSFX Modifications: Main_Guide/JSFX_Mods.md
+      - Routing for THS and TAM(D): Main_Guide/Routing_Structure.md
+    - Setting up THS:
+      - Current Methods: Main_Guide/Connectivity.md
+      - Metaplugin and Connector Method:
+        - Stem Buses: Main_Guide/MCM_THS_Stem_Buses.md
+        - Master Bus: Main_Guide/MCM_THS_Master_Bus.md
+        - DAW-Specific Considerations: Main_Guide/MCM_DAW_Considerations.md
+      - Sidechain Method:
+        - Stem Buses: Main_Guide/SCM_THS_Stem_Buses.md
+        - Master Bus: Main_Guide/SCM_THS_Master_Bus.md
+    - Setting up TAM(D):  
+      - Channels: Main_Guide/TAMD_Channels.md
+      - Stem Buses: Main_Guide/TAMD_Stem_Buses.md
+      - FX Sends: Main_Guide/TAMD_FX_Sends.md
+      - Master Bus: Main_Guide/TAMD_Master_Bus.md
+    - Example Sessions:
+      - Metaplugin and Connector Session: Main_Guide/MCM_Example_Session.md
+      - Sidechain Session: Main_Guide/SCM_Example_Session.md
+    - Going Farther: Main_Guide/Going_Farther.md
