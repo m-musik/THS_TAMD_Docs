@@ -6,6 +6,7 @@ Based on current community testing and feedback, the procedures documented in th
 * Cubase
 * Logic Pro
 * Ableton
+* Fender Studio
 
 Just because your DAW is not listed above does not mean it is unsupported! By adapting the procedures documented in this guide, you may be able to find a way to make THS and TAM(D) run in your DAW, too.
 
