@@ -1,7 +1,7 @@
 The purpose of this guide is to explain how to use DocShadrach's The Hot Summer (THS) and The Analog Molecule (TAM) / The Analog Molecule Deluxe (TAMD) JSFX plugins outside of Reaper. This guide was written from the perspective of a Cubase Pro 15 user. The procedures documented here are current as of the time the guide was published and are not a comprehensive reference for all possible ways of operating these plugins. Feel free to use and adapt this guide to best suit your needs!
 
 ## Tested DAWs
-Based on current community testing and feedback, the procedures documented in this guide have been tested in the following DAWs:
+The procedures documented in this guide have been tested in the following DAWs:
 
 | DAW           | TAM(D) | THS: Metaplugin and Connector Method | THS: Sidechain Method | Versions Tested |
 | ------------- | :----: | :----------------------------------: | :-------------------: | --------------- |
