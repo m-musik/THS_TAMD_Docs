@@ -3,7 +3,7 @@ To use THS on a stem bus, you will need to begin by instantiating the following 
 1. YSFX
 2. Blue Cat's Connector
 
-!!! tip Post-Fader Inserts
+!!! tip "Post-Fader Inserts"
     If you are using a DAW that supports post-fader inserts, I would recommend making Connector a post-fader insert on your stem buses. Doing so will allow you to use the channel fader to control the level of the stem bus and still use the channel meter when mixing.
 
 ## YSFX
@@ -41,7 +41,7 @@ Repeat this process for all stem buses in your project, making sure that each in
 
 ![Screenshot](../img/Pasted%20image%2020260601205520.png)
 
-!!! tip Connector Presets – Sender
+!!! tip "Connector Presets – Sender"
     To simplify the process of setting up THS in future projects, you can save the configurations you set for your sender instances of Connector as presets. That way, you can simply instantiate Connector on your stem buses, load each TX preset, and all your senders will be automatically configured.
 
 ## Output Routing

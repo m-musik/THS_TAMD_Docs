@@ -20,7 +20,7 @@ Next, we will connect the outputs of the Connector instances to the appropriate 
 
 ![Screenshot](../img/Pasted%20image%2020260601212243.png)
 
-!!! tip Moving Nodes in Metaplugin
+!!! tip "Moving Nodes in Metaplugin"
     Nodes can be rearranged and moved within Metaplugin at any time. Feel free to rearrange and move them as desired to improve the legibility of the connectivity graph.
 
 We can now begin to configure the Connector instances to receive sound from the senders we previously instantiated on the stem buses. Before proceeding, it's critical to understand the channel assignments THS expects the stem buses to follow:
@@ -84,5 +84,5 @@ If any of the channel indicators are not blinking, go back and verify the config
 
 ![Screenshot](../img/Pasted%20image%2020260601215608.png)
 
-!!! tip Metaplugin Presets
+!!! tip "Metaplugin Presets"
     To simplify the process of setting up THS in future projects, you can save your Metaplugin setup by clicking the **User presets** tab, then click **Save new preset**. This will save all the parameters and connections for the plugins in your diagram and can significantly reduce the time needed to setup the master instance of THS.
