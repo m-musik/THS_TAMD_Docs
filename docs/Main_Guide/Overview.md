@@ -3,12 +3,13 @@ The purpose of this guide is to explain how to use DocShadrach's The Hot Summer 
 ## Supported DAWs
 Based on current community testing and feedback, the procedures documented in this guide have been confirmed to work in the following DAWs:
 
-| DAW | Metaplugin and Connector Method | Sidechain Method | Versions Tested |
-| --- | :-----------------------------: | :--------------: | --------------- |
-| Cubase        | ✅ | ✅ | <ul><li>Pro 15</li></ul> |
-| Logic Pro     | ✅ | ❌ | <ul><li>12.2</li></ul> |
-| Ableton       | ✅ | ✅ | **TBD** |
-| Fender Studio | ✅ | ✅ | **TBD** |
+| DAW           | TAM(D) | THS: Metaplugin and Connector Method | THS: Sidechain Method | Versions Tested |
+| ------------- | :----: | :----------------------------------: | :-------------------: | --------------- |
+| Cubase        | ✅ | ✅ | ✅ | <ul><li>Pro 15</li></ul> |
+| Logic Pro     | ❓ | ❓ | ❌ | <ul><li>12.2</li></ul> |
+| Ableton       | ✅ | ✅ | ✅ | **TBD** |
+| Fender Studio | ✅ | ✅ | ✅ | **TBD** |
+| UAD LUNA      | ❓ | ❓ | ❌ | **TBD** |
 
 Just because your DAW is not listed above does not mean it is unsupported! By adapting the procedures documented in this guide, you may be able to find a way to make THS and TAM(D) run in your DAW, too.
 
