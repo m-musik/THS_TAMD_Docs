@@ -9,7 +9,7 @@ The procedures documented in this guide have been tested in the following DAWs:
 | Logic Pro     | ⚠️ | ⚠️ | ❌ | <ul><li>12.2</li></ul> |
 | Ableton       | ✅ | ✅ | ✅ | **TBD** |
 | Fender Studio | ✅ | ✅ | ✅ | **TBD** |
-| UAD LUNA      | ❓ | ❓ | ❌ | <ul><li>2.0.3</li></ul> |
+| UAD LUNA      | ⚠️ | ⚠️ | ❌ | <ul><li>2.0.3</li></ul> |
 
 ??? note "Table Key"
     ✅ = Tested as working<br>
