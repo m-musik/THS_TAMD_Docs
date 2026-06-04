@@ -45,6 +45,6 @@ Repeat this process for all stem buses in your project, making sure that each in
     To simplify the process of setting up THS in future projects, you can save the configurations you set for your sender instances of Connector as presets. That way, you can simply instantiate Connector on your stem buses, load each TX preset, and all your senders will be automatically configured.
 
 ## Output Routing
-Before proceeding to the master bus configuration, I **strongly** recommend modifying the output routing of your stem buses to prevent their sound from ending up on your master bus. How you do this will vary between DAWs. In Cubase, simply changing the output routing option to **No Bus** will do the trick:
+Unless otherwise noted in the [DAW-Specific Considerations for THS](MCM_DAW_Considerations.md), I **strongly** recommend modifying the output routing of your stem buses to prevent their sound from ending up on your master bus. How you do this will vary between DAWs. In Cubase, simply changing the output routing option to **No Bus** will do the trick:
 
 ![Screenshot](../img/Pasted%20image%2020260601210526.png)

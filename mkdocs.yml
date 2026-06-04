@@ -65,6 +65,7 @@ nav:
       - Stem Buses: Main_Guide/TAMD_Stem_Buses.md
       - FX Sends: Main_Guide/TAMD_FX_Sends.md
       - Master Bus: Main_Guide/TAMD_Master_Bus.md
+      - DAW-Specific Considerations: Main_Guide/TAMD_DAW_Considerations.md
     - Example Sessions:
       - Metaplugin and Connector Session: Main_Guide/MCM_Example_Session.md
       - Sidechain Session: Main_Guide/SCM_Example_Session.md

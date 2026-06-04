@@ -1,0 +1,2 @@
+## Logic Pro
+* Due to the way Logic Pro manages its audio processing threads, any track that is not actively producing sound will likely be put to sleep. This may cause synchronization issues while using TAM(D) within Logic.
