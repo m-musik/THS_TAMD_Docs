@@ -45,3 +45,8 @@ If you cannot see all the sidechain inputs for YSFX, click the **Expand All** bu
 To verify that THS is fully configured and ready for use, play some sound through your project's stem busses. In Cubase, I can do this by instantiating the TestGenerator plugin to play test tones. If everything is working correctly, the green indicators in the master bus instance of THS should begin to flash bright green. This means that THS is detecting signal input from each bus. If everything was configured correctly, the indicator for all configured and connected channels should periodically flash while playing sound.
 
 If any of the channel indicators are not blinking, go back and verify the output routing for your stem busses, making sure that each bus is routed to a different sidechain input on the YSFX plugin hosting the THS master. Additionally, verify that the selected sidechain input corresponds to the input channels specified by the stem ID selected in the stem bus instances of THS.
+
+## Next Steps
+After completing the procedure documented on this page, THS should be fully configured for operation in your DAW using the Sidechain Method!
+
+If you wish to add TAM(D) to your project, you can proceed to the [Channels](TAMD_Channels.md) setup page. I would also strongly encourage you to review the TAM(D) [DAW-Specific Considerations](TAMD_DAW_Considerations.md) page so you are aware of any DAW-specific constraints that may affect your use of TAM(D).

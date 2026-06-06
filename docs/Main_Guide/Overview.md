@@ -3,13 +3,14 @@ The purpose of this guide is to explain how to use DocShadrach's The Hot Summer 
 ## Tested DAWs
 The procedures documented in this guide have been tested in the following DAWs:
 
-| DAW           | TAM(D) | THS: Metaplugin and Connector Method | THS: Sidechain Method | Versions Tested |
-| ------------- | :----: | :----------------------------------: | :-------------------: | --------------- |
-| Cubase        | ✅ | ✅ | ✅ | <ul><li>Pro 15</li></ul> |
-| Logic Pro     | ⚠️ | ⚠️ | ❌ | <ul><li>12.2</li></ul> |
-| Ableton       | ✅ | ✅ | ✅ | **TBD** |
-| Fender Studio | ✅ | ✅ | ✅ | **TBD** |
-| UAD LUNA      | ⚠️ | ⚠️ | ❌ | <ul><li>2.0.3</li></ul> |
+| DAW           | TAM(D) | THS: Metaplugin and Connector Method | THS: Sidechain Method | THS: DAW-Specific Method | Versions Tested |
+| ------------- | :----: | :----------------------------------: | :-------------------: | :----------------------: | --------------- |
+| Cubase        | ✅ | ✅ | ✅ | N/A | <ul><li>Pro 15</li></ul> |
+| Logic Pro     | ⚠️ | ⚠️ | ❌ | Yes | <ul><li>12.2</li></ul> |
+| Ableton       | ✅ | ✅ | ✅ | N/A | **TBD** |
+| Fender Studio | ✅ | ✅ | ✅ | N/A | **TBD** |
+| UAD LUNA      | ⚠️ | ⚠️ | ❌ | ❓ | <ul><li>2.0.3</li></ul> |
+| Bitwig Studio | ❓ | ❓ | ❓ | ❓ | **TBD** |
 
 ??? note "Table Key"
     ✅ = Tested as working<br>

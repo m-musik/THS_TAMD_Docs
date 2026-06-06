@@ -5,9 +5,10 @@
 Starting around Logic Pro 10.7.9, Apple introduced a new scheduling algorithm that aggressively halts processing on any track that Logic believes will not contribute to the output of the project. This primarily affects self-generating plugins that can produce sound without an audio or MIDI event on the track. It also affects TAM(D) as it depends upon a continuous stream of audio blocks to operate correctly.
 
 ### Synchronization
+You may experience synchronization issues upon opening a Logic project containing TAM(D), even after following the current best procedure. To work around this, start and stop playback of your project once after opening the project. All instances of TAM(D) should remain synchronized for the rest of the time you have the project open.
 
-
-
+### Link Loss
+You may experience issues with TAM(D) forgetting your last selected Link setting for the channels, busses, and master bus upon opening your project. After starting and stopping playback to reestablish synchronization, you can open any instance of TAM(D) and reengage the link function as desired.
 
 ## Universal Audio LUNA
 * Due to the way LUNA manages its audio processing threads, any track that is not actively producing sound will likely be put to sleep. This may cause synchronization issues while using TAM(D) within LUNA.
