@@ -1,1 +1,4 @@
-FX Sends are similar to Stem Buses in that they must also be configured as a **Bus** rather than a **Channel**. However, unlike Stem Buses, when you want to apply TAM or TAMD to an FX Send, you must load YSFX as **the last** insert on your FX Send track. This configuration helps to reduce potential issues with phase that may occur if TAM or TAMD were set to **Channel** mode.
+!!! info "Optional on FX Sends"
+    Use of TAM(D) on your project's FX sends is completely optional. You can choose to use TAM(D) only on your individual channels and the master bus, and the system will still function correctly.
+
+FX Sends are similar to Stem Busses in that they must also be configured as a **Bus** rather than a **Channel**. However, unlike Stem Busses, when you want to apply TAM or TAMD to an FX Send, you must load YSFX as **the last** insert on your FX Send track. This configuration helps to reduce potential issues with phase that may occur if TAM or TAMD were set to **Channel** mode.

@@ -12,7 +12,7 @@ In Metaplugin, the pins on the top of all plugin nodes are considered to be the 
 ![Screenshot](../img/Pasted%20image%2020260601211615.png)
 
 ## Blue Cat's Connector
-Next, load enough instances of Blue Cat's Connector to receive sound from all the stem buses in your project. In my example, I have four stem buses, so I will load 4 instances of Connector:
+Next, load enough instances of Blue Cat's Connector to receive sound from all the stem busses in your project. In my example, I have four stem busses, so I will load 4 instances of Connector:
 
 ![Screenshot](../img/Pasted%20image%2020260601211805.png)
 
@@ -23,7 +23,7 @@ Next, we will connect the outputs of the Connector instances to the appropriate 
 !!! tip "Moving Nodes in Metaplugin"
     Nodes can be rearranged and moved within Metaplugin at any time. Feel free to rearrange and move them as desired to improve the legibility of the connectivity graph.
 
-We can now begin to configure the Connector instances to receive sound from the senders we previously instantiated on the stem buses. Before proceeding, it's critical to understand the channel assignments THS expects the stem buses to follow:
+We can now begin to configure the Connector instances to receive sound from the senders we previously instantiated on the stem busses. Before proceeding, it's critical to understand the channel assignments THS expects the stem busses to follow:
 
 | **Stem** | **Channel Assignment** |
 | -------- | ---------------------- |
@@ -78,7 +78,7 @@ Since this is our master instance of THS, we can now change the **Topology** par
 
 Assuming all stem bus instances of THS have been configured correctly, you should see a dim green indicator next to each configured stem. If you believe you should have more green indicators than what you currently see, revisit the **Stem ID** assignment of your stem bus instances of THS to verify that each stem is assigned a unique ID.
 
-To verify that THS is fully configured and ready for use, play some sound through your project's stem buses. In Cubase, I can do this by instantiating the TestGenerator plugin to play test tones. If everything is working correctly, the green indicators in the master bus instance of THS should begin to flash bright green. This means that THS is detecting signal input from each bus. If everything was configured correctly, the indicator for all configured and connected channels should periodically flash while playing sound.
+To verify that THS is fully configured and ready for use, play some sound through your project's stem busses. In Cubase, I can do this by instantiating the TestGenerator plugin to play test tones. If everything is working correctly, the green indicators in the master bus instance of THS should begin to flash bright green. This means that THS is detecting signal input from each bus. If everything was configured correctly, the indicator for all configured and connected channels should periodically flash while playing sound.
 
 If any of the channel indicators are not blinking, go back and verify the configuration for your sender and receiver nodes of Connector. If the sender/receiver pairs are configured correctly, the level meter on the right-hand side of your Connector receivers will show signal:
 
