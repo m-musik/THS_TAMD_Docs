@@ -86,3 +86,8 @@ If any of the channel indicators are not blinking, go back and verify the config
 
 !!! tip "Metaplugin Presets"
     To simplify the process of setting up THS in future projects, you can save your Metaplugin setup by clicking the **User presets** tab, then click **Save new preset**. This will save all the parameters and connections for the plugins in your diagram and can significantly reduce the time needed to setup the master instance of THS.
+
+## Next Steps
+After completing the procedure documented on this page, THS should be fully configured for operation in your DAW using the Metaplugin and Connector Method!
+
+If you wish to add TAM(D) to your project, you can proceed to the [Channels](TAMD_Channels.md) setup page. I would also strongly encourage you to review the TAM(D) [DAW-Specific Considerations](TAMD_DAW_Considerations.md) page so you are aware of any DAW-specific constraints that may affect your use of TAM(D).
