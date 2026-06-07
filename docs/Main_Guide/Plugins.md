@@ -55,7 +55,7 @@ This method can also be used to quickly undo an update and rollback to an older 
 * **[Blue Cat's Connector](https://www.bluecataudio.com/Products/Product_Connector/)[^2]:** This plugin is used to send the stem bus outputs to Metaplugin using a sender and receiver structure.
 
 !!! info "Plugin Demos"
-    Demos are available for Metaplugin and Connector. These can be used to test the Metaplugin and Connector method without needing to purchase the plugins first. Metaplugin's demo is fully functional but its state cannot be saved. Connector's demo limits you to 5 total instances of the plugin at any given time. Combined, this will allow you to route two stem buses to a master instance of THS.
+    Demos are available for Metaplugin and Connector. These can be used to test the Metaplugin and Connector method without needing to purchase the plugins first. Metaplugin's demo is fully functional but its state cannot be saved. Connector's demo limits you to 5 total instances of the plugin at any given time. Combined, this will allow you to route two stem busses to a master instance of THS.
 
 [^1]: Based on community testing and feedback, it appears that the latest version of YSFX requires a fairly modern version of macOS. Users seem to have the most success on macOS 26 (Tahoe), but other recent versions of macOS may also work.
 [^2]: While Metaplugin can technically send and receive audio in a similar manner as Connector, as of the time this guide was drafted, the SendIt node in Metaplugin produces crackling audio. Connector is recommended as a more reliable alternative at this time.

@@ -1,24 +1,34 @@
 ## General Setup
-To use THS on the master bus, you will need to begin by instantiating Metaplugin as the **first** insert on your master bus. When you first open Metaplugin, it will resemble the following:
+To use THS on the master bus, you will need to begin by instantiating Metaplugin as the **first** Audio FX on your master bus. When you first open Metaplugin, it will resemble the following:
 
-![Screenshot](../img/Pasted%20image%2020260601210955.png)
+![Screenshot](../img/Pasted%20image%2020260606204958.png)
 
 Begin by loading YSFX. You can do this manually by right-clicking anywhere in the grey area of Metaplugin, then clicking **Load plugin from file...**, or by clicking **Options...** in the bottom-left corner of the plugin and selecting any of the available scan options to populate the **Plugin library**. Then search for YSFX in the plugin list and drag-and-drop it onto the canvas. Once loaded, YSFX will appear as follows:
 
-![Screenshot](../img/Pasted%20image%2020260601211400.png)
+![Screenshot](../img/Pasted%20image%2020260606205112.png)
 
-In Metaplugin, the pins on the top of all plugin nodes are considered to be the inputs, and the pins on the bottom are the outputs. The channel numbers increase from left to right, so the first two pins on the top and bottom are your "normal" stereo input and output pins. We can begin by connecting the first two pins on the bottom of YSFX to the two pins of the Audio Output node to connect what will eventually be the output of THS to the output of Metaplugin:
+Next, right-click anywhere in the grey area of Metaplugin and click the **FourChanMixer** option. This will add a four-channel mixer node to the graph:
 
-![Screenshot](../img/Pasted%20image%2020260601211615.png)
+![Screenshot](../img/Pasted%20image%2020260606205123.png)
+
+In Metaplugin, the pins on the top of all plugin nodes are considered to be the inputs, and the pins on the bottom are the outputs. The channel numbers increase from left to right, so the first two pins on the top and bottom are your "normal" stereo input and output pins. We can begin by connecting the first two pins on the bottom of YSFX to the pins 3-4 of the FourChanMixer node. To make use of the same sidechain synchronization tone used on the individual tracks of the project, we will also connect pins 3-4 of the Audio Input node to pins 1-2 of the FourChanMixer node:
+
+![Screenshot](../img/Pasted%20image%2020260606205159.png)
+
+Double-click the FourChanMixer node to open the mixer controls. Since we are only using the first two channels, we can mute the third and fourth channels. Additionally, we can leverage the mixer's level control to attenuate channel 1 by -80 dB:
+
+![Screenshot](../img/Pasted%20image%2020260606205209.png)
+
+This will reduce the level of the sidechain input by an additional 80 dB for a cumulative attenuation of -272 dB.
 
 ## Blue Cat's Connector
 Next, load enough instances of Blue Cat's Connector to receive sound from all the stem busses in your project. In my example, I have four stem busses, so I will load 4 instances of Connector:
 
-![Screenshot](../img/Pasted%20image%2020260601211805.png)
+![Screenshot](../img/Pasted%20image%2020260606205248.png)
 
 Next, we will connect the outputs of the Connector instances to the appropriate inputs of YSFX. This is the step that enables use of THS outside of Reaper as most DAWs do not allow for arbitrary routing of many channels the way we can in Metaplugin. It's also important to note that THS expects the stem bus inputs to begin on Channels 3-4, ***not*** Channels 1-2. This means that when we connect the Connector instances to YSFX, we will skip the first two input pins and begin our connections with the second set of pins:
 
-![Screenshot](../img/Pasted%20image%2020260601212243.png)
+![Screenshot](../img/Pasted%20image%2020260606205438.png)
 
 !!! tip "Moving Nodes in Metaplugin"
     Nodes can be rearranged and moved within Metaplugin at any time. Feel free to rearrange and move them as desired to improve the legibility of the connectivity graph.
@@ -63,8 +73,15 @@ Repeat this process for as many stems as you would like to route into THS, up to
 !!! tip "Connector Presets – Receiver"
     To simplify the process of setting up THS in future projects, you can save the configurations you set for your receiver instances of Connector as presets. That way, you can simply recall the presets to configure your receiver instances of Connector.
 
+## Connect Sidechain
+Now that the receiver instances of Connector have been configured, we can set the `SYNC_TONE` track as the sidechain input for Metaplugin:
+
+![Screenshot](../img/Pasted%20image%2020260606210248.png)
+
+Once set, start and stop playback in Logic one time to ensure all tracks are alive and synchronized.
+
 ## YSFX
-Now that we have connected and configured all the receiver instances of Connector, we can configure the master instance of THS. Double-click the YSFX node in Metaplugin. By default, it will look like the following:
+Now that all tracks are alive, we can configure the master instance of THS. Double-click the YSFX node in Metaplugin. By default, it will look like the following:
 
 ![Screenshot](../img/Pasted%20image%2020260601214615.png)
 
@@ -78,7 +95,7 @@ Since this is our master instance of THS, we can now change the **Topology** par
 
 Assuming all stem bus instances of THS have been configured correctly, you should see a dim green indicator next to each configured stem. If you believe you should have more green indicators than what you currently see, revisit the **Stem ID** assignment of your stem bus instances of THS to verify that each stem is assigned a unique ID.
 
-To verify that THS is fully configured and ready for use, play some sound through your project's stem busses. In Cubase, I can do this by instantiating the TestGenerator plugin to play test tones. If everything is working correctly, the green indicators in the master bus instance of THS should begin to flash bright green. This means that THS is detecting signal input from each bus. If everything was configured correctly, the indicator for all configured and connected channels should periodically flash while playing sound.
+To verify that THS is fully configured and ready for use, play some sound through your project's stem busses. In Logic, you can do this by instantiating the Test Oscillator plugin to play test tones. If everything is working correctly, the green indicators in the master bus instance of THS should begin to flash bright green. This means that THS is detecting signal input from each bus. If everything was configured correctly, the indicator for all configured and connected channels should periodically flash while playing sound.
 
 If any of the channel indicators are not blinking, go back and verify the configuration for your sender and receiver nodes of Connector. If the sender/receiver pairs are configured correctly, the level meter on the right-hand side of your Connector receivers will show signal:
 
@@ -88,6 +105,6 @@ If any of the channel indicators are not blinking, go back and verify the config
     To simplify the process of setting up THS in future projects, you can save your Metaplugin setup by clicking the **User presets** tab, then click **Save new preset**. This will save all the parameters and connections for the plugins in your diagram and can significantly reduce the time needed to setup the master instance of THS.
 
 ## Next Steps
-After completing the procedure documented on this page, THS should be fully configured for operation in your DAW using the Metaplugin and Connector Method!
+After completing the procedure documented on this page, THS should be fully configured for operation in Logic Pro!
 
 If you wish to add TAM(D) to your project, you can proceed to the [Channels](TAMD_Channels.md) setup page. I would also strongly encourage you to review the TAM(D) [DAW-Specific Considerations](TAMD_DAW_Considerations.md) page so you are aware of any DAW-specific constraints that may affect your use of TAM(D).

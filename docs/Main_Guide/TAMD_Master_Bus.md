@@ -12,7 +12,7 @@ If you wish to link all the instances of TAM or TAMD in your project so they fol
 
 ![Screenshot](../img/Pasted%20image%2020260601224244.png)
 
-If you would like all the individual channels and buses to follow the console selection of the master, click the new **CH** and **BUS** buttons. TAM or TAMD will then appear like the following:
+If you would like all the individual channels and busses to follow the console selection of the master, click the new **CH** and **BUS** buttons. TAM or TAMD will then appear like the following:
 
 ![Screenshot](../img/Pasted%20image%2020260601224346.png)
 
