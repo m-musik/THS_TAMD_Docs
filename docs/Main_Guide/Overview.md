@@ -16,7 +16,7 @@ The procedures documented in this guide have been tested in the following DAWs:
 
 ??? note "Table Key"
     ✅ = Tested as working<br>
-    ⚠️ = May work but with caveats<br>
+    ⚠️ = Works with caveats (for example, a DAW-specific procedure)<br>
     ❌ = Not supported<br>
     ❓ = Under investigation
 
