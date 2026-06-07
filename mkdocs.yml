@@ -48,6 +48,7 @@ plugins:
         'Main_Guide/MCM_THS_Stem_Buses.md' : 'Main_Guide/MCM_THS_Stem_Busses.md'
         'Main_Guide/SCM_THS_Stem_Buses.md' : 'Main_Guide/SCM_THS_Stem_Busses.md'
         'Main_Guide/TAMD_Stem_Buses.md'    : 'Main_Guide/TAMD_Stem_Busses.md'
+        'Main_Guide/Connectivity.md'       : 'Main_Guide/THS_Methods.md'
 
 nav:
   - Main Guide:
@@ -57,7 +58,7 @@ nav:
       - JSFX Modifications: Main_Guide/JSFX_Mods.md
       - Routing for THS and TAM(D): Main_Guide/Routing_Structure.md
     - Setting up THS:
-      - Current Methods: Main_Guide/Connectivity.md
+      - Current Methods: Main_Guide/THS_Methods.md
       - Universal Methods:
         - Metaplugin and Connector Method:
           - DAW-Specific Considerations: Main_Guide/MCM_DAW_Considerations.md

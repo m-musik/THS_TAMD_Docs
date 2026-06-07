@@ -60,7 +60,7 @@ Unlike the first Connector receiver, this instance will not automatically connec
 
 Repeat this process for as many stems as you would like to route into THS, up to the maximum of 8 stems.
 
-!!! tip Connector Presets – Receiver
+!!! tip "Connector Presets – Receiver"
     To simplify the process of setting up THS in future projects, you can save the configurations you set for your receiver instances of Connector as presets. That way, you can simply recall the presets to configure your receiver instances of Connector.
 
 ## YSFX

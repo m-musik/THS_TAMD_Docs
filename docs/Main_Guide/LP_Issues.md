@@ -1,4 +1,3 @@
 As of the time this guide was published, the following issues have been noted when using THS in Logic Pro:
 
-## Synchronization
-You may experience synchronization issues upon opening a Logic project containing THS, even after following this procedure. To work around this, start and stop playback of your project once after opening the project. All instances of THS should remain synchronized for the rest of the time you have the project open.
+* **Synchronization**: You may experience synchronization issues upon opening a Logic project containing THS, even after following this procedure. To work around this, start and stop playback of your project once after opening the project. All instances of THS should remain synchronized for the rest of the time you have the project open.
