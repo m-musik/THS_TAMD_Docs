@@ -83,4 +83,6 @@ nav:
     - Example Sessions:
       - Metaplugin and Connector Session: Main_Guide/MCM_Example_Session.md
       - Sidechain Session: Main_Guide/SCM_Example_Session.md
+      - DAW-Specific Sessions:
+        - Logic Pro: Main_Guide/LP_Example_Session.md
     - Going Farther: Main_Guide/Going_Farther.md
