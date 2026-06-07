@@ -7,12 +7,12 @@ The procedures documented in this guide have been tested in the following DAWs:
 
 | DAW           | TAM(D) | THS: Metaplugin and Connector Method | THS: Sidechain Method | THS: DAW-Specific Method | Versions Tested |
 | ------------- | :----: | :----------------------------------: | :-------------------: | :----------------------: | --------------- |
-| Cubase        | ✅ | ✅ | ✅ | N/A | <ul><li>Pro 15</li></ul> |
-| Logic Pro     | ⚠️ | ⚠️ | ❌ | Yes | <ul><li>12.2</li></ul> |
 | Ableton       | ✅ | ✅ | ✅ | N/A | **TBD** |
+| Bitwig Studio | ✅ | ✅ | ❌ | N/A | <ul><li>6.0.6</li></ul> |
+| Cubase        | ✅ | ✅ | ✅ | N/A | <ul><li>Pro 15</li></ul> |
 | Fender Studio | ✅ | ✅ | ✅ | N/A | **TBD** |
+| Logic Pro     | ⚠️ | ⚠️ | ❌ | Yes | <ul><li>12.2</li></ul> |
 | UAD LUNA      | ⚠️ | ⚠️ | ❌ | ❓ | <ul><li>2.0.3</li></ul> |
-| Bitwig Studio | ❓ | ❓ | ❓ | ❓ | **TBD** |
 
 ??? note "Table Key"
     ✅ = Tested as working<br>

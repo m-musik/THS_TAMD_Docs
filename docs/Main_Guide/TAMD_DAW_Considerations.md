@@ -1,3 +1,7 @@
+## All DAWs
+### Link Loss
+You may experience issues with TAM(D) forgetting your last selected Link setting for the channels, busses, and master bus upon opening your project. You can open any instance of TAM(D) and reengage the link function as desired.
+
 ## Logic Pro (10.7.9 or newer)
 ### Project Setup
 **Before setting up TAM(D), users of Logic Pro 10.7.9 or newer must follow the [Project Setup](LP_Setup.md) and [Track](LP_Tracks.md) setup pages from the Logic Pro-specific THS guide.** If you are working in Logic Pro and have already setup THS, you do not need to repeat those steps.
@@ -6,9 +10,6 @@ Starting around Logic Pro 10.7.9, Apple introduced a new scheduling algorithm th
 
 ### Synchronization
 You may experience synchronization issues upon opening a Logic project containing TAM(D), even after following the current best procedure. To work around this, start and stop playback of your project once after opening the project. All instances of TAM(D) should remain synchronized for the rest of the time you have the project open.
-
-### Link Loss
-You may experience issues with TAM(D) forgetting your last selected Link setting for the channels, busses, and master bus upon opening your project. After starting and stopping playback to reestablish synchronization, you can open any instance of TAM(D) and reengage the link function as desired.
 
 ## Universal Audio LUNA
 * Due to the way LUNA manages its audio processing threads, any track that is not actively producing sound will likely be put to sleep. This may cause synchronization issues while using TAM(D) within LUNA.
