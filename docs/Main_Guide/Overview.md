@@ -5,7 +5,7 @@ The procedures documented here are current as of the time the guide was publishe
 ## Tested DAWs
 The procedures documented in this guide have been tested in the following DAWs:
 
-| DAW           | TAM(D) | THS: Metaplugin and Connector Method | THS: Sidechain Method | THS: DAW-Specific Method | Versions Tested |
+| DAW           | TAM(D) | THS: Wrapper and Router Method | THS: Sidechain Method | THS: DAW-Specific Method | Versions Tested |
 | ------------- | :----: | :----------------------------------: | :-------------------: | :----------------------: | --------------- |
 | Ableton       | ✅ | ✅ | ✅ | N/A | **TBD** |
 | Bitwig Studio | ✅ | ✅ | ❌ | N/A | <ul><li>6.0.6</li></ul> |
