@@ -10,6 +10,9 @@ To use THS on the master bus, you will need to begin by instantiating your plugi
     
     ![Screenshot](../img/Pasted%20image%2020260601211400.png)
     
+    !!! warning "Mixing Plugin Formats"
+        When adding your wrapper and router plugins to Metaplugin, make sure to select the same format as the plugins used by your host DAW. For example, if you are using Cubase, make sure you select VST3 plugins. If you are using Logic, select AU plugins instead. Mixing plugin formats can cause synchronization issues.
+    
     In Metaplugin, the pins on the top of all plugin nodes are considered to be the inputs, and the pins on the bottom are the outputs. The channel numbers increase from left to right, so the first two pins on the top and bottom are your "normal" stereo input and output pins. We can begin by connecting the first two pins on the bottom of YSFX to the two pins of the Audio Output node to connect what will eventually be the output of THS to the output of Metaplugin:
     
     ![Screenshot](../img/Pasted%20image%2020260601211615.png)
@@ -18,17 +21,41 @@ To use THS on the master bus, you will need to begin by instantiating your plugi
         Nodes can be rearranged and moved within Metaplugin at any time. Feel free to rearrange and move them as desired to improve the legibility of the connectivity graph.
 
 === "Element"
-    **Work in progress!**
+    When you first open Element, it will resemble the following:
+    
+    ![Screenshot](../img/Pasted%20image%2020260609184723.png)
+    
+    Begin by loading YSFX. If this is your first time using Element, you can load YSFX by right-clicking anywhere in the grey area of Element, then hover over **Unverified**. Then hover over the plugin format that matches your host DAW's preferred format. Scroll through the list and search for the `ysfx-s FX` plugin, then click it. Otherwise, hover over **Jean Pierre Cimilando/Joep Vanlier** and click the variant of YSFX that matches your host DAW's preferred format. Once loaded, YSFX will appear as follows:
+    
+    ![Screenshot](../img/Pasted%20image%2020260609184917.png)
+    
+    !!! warning "Mixing Plugin Formats"
+        When adding your wrapper and router plugins to Element, make sure to select the same format as the plugins used by your host DAW. For example, if you are using Cubase, make sure you select VST3 plugins. If you are using Logic, select AU plugins instead. Mixing plugin formats can cause synchronization issues.
+    
+    In Element, the pins on the top of all plugin nodes are considered to be the inputs, and the pins on the bottom are the outputs. The channel numbers increase from left to right, so the first two pins on the top and bottom are your "normal" stereo input and output pins. We can begin by connecting the first two pins on the bottom of YSFX to the two pins of the Audio Out node to connect what will eventually be the output of THS to the output of Element:
+    
+    ![Screenshot](../img/Pasted%20image%2020260609184938.png)
+    
+    !!! tip "Moving Nodes in Element"
+        Nodes can be rearranged and moved within Element at any time. Feel free to rearrange and move them as desired to improve the legibility of the connectivity graph.
 
 ## Router Plugin
 === "Blue Cat's Connector"
-    Next, load enough instances of Blue Cat's Connector to receive sound from all the stem busses in your project. In my example, I have four stem busses and use Metaplugin, so I will load 4 instances of Connector:
+    Next, load enough instances of Blue Cat's Connector to receive sound from all the stem busses in your project. I have four stem busses in my example, so I will load 4 instances of Connector:
     
-    ![Screenshot](../img/Pasted%20image%2020260601211805.png)
+    === "Metaplugin"
+        ![Screenshot](../img/Pasted%20image%2020260601211805.png)
+    
+    === "Element"
+        ![Screenshot](../img/Pasted%20image%2020260609190442.png)
     
     Next, we will connect the outputs of the Connector instances to the appropriate inputs of YSFX. This is the step that enables use of THS outside of Reaper as most DAWs do not allow for arbitrary routing of many channels the way we can in wrappers like Metaplugin and Element. It's also important to note that THS expects the stem bus inputs to begin on Channels 3-4, ***not*** Channels 1-2. This means that when we connect the Connector instances to YSFX, we will skip the first two input pins and begin our connections with the second set of pins:
     
-    ![Screenshot](../img/Pasted%20image%2020260601212243.png)
+    === "Metaplugin"
+        ![Screenshot](../img/Pasted%20image%2020260601212243.png)
+    
+    === "Element"
+        ![Screenshot](../img/Pasted%20image%2020260609190611.png)
     
     We can now begin to configure the Connector instances to receive sound from the senders we previously instantiated on the stem busses. Before proceeding, it's critical to understand the channel assignments THS expects the stem busses to follow:
     
@@ -74,7 +101,7 @@ To use THS on the master bus, you will need to begin by instantiating your plugi
     When a new router plugin is identified, it will be documented here!
 
 ## YSFX
-Now that we have connected and configured all the receiver instances of Connector, we can configure the master instance of THS. Double-click the YSFX node in Metaplugin. By default, it will look like the following:
+Now that we have connected and configured all the receiver instances of Connector, we can configure the master instance of THS. Double-click the YSFX node in your router pulgin. By default, it will look like the following:
 
 ![Screenshot](../img/Pasted%20image%2020260601214615.png)
 
@@ -90,16 +117,24 @@ Assuming all stem bus instances of THS have been configured correctly, you shoul
 
 To verify that THS is fully configured and ready for use, play some sound through your project's stem busses. In Cubase, I can do this by instantiating the TestGenerator plugin to play test tones. If everything is working correctly, the green indicators in the master bus instance of THS should begin to flash bright green. This means that THS is detecting signal input from each bus. If everything was configured correctly, the indicator for all configured and connected channels should periodically flash while playing sound.
 
-If any of the channel indicators are not blinking, go back and verify the configuration for your sender and receiver nodes of Connector. If the sender/receiver pairs are configured correctly, the level meter on the right-hand side of your Connector receivers will show signal:
+If any of the channel indicators are not blinking, go back and verify the configuration of the sender and receiver nodes of your router plugin.
 
-![Screenshot](../img/Pasted%20image%2020260601215608.png)
+=== "Blue Cat's Connector"
+    If the sender/receiver pairs are configured correctly, the level meter on the right-hand side of your Connector receivers will show signal:
+    
+    ![Screenshot](../img/Pasted%20image%2020260601215608.png)
 
+=== "Other Router"
+    When a new router plugin is identified, it will be documented here!
+
+## Wrapper Recall
 === "Metaplugin"
     !!! tip "Metaplugin Presets"
         To simplify the process of setting up THS in future projects, you can save your Metaplugin setup by clicking the **User presets** tab, then click **Save new preset**. This will save all the parameters and connections for the plugins in your diagram and can significantly reduce the time needed to setup the master instance of THS.
 
 === "Element"
-    **Work in progress!**
+    !!! tip "Element Sessions"
+        To simplify the process of setting up THS in future projects, you can save your Element setup by clicking the hamburger menu icon in the top right corner of the plugin, , then click **Save Session As...**. This will save all the parameters and connections for the plugins in your diagram and can significantly reduce the time needed to setup the master instance of THS.
 
 ## Next Steps
 After completing the procedure documented on this page, THS should be fully configured for operation in your DAW using the Wrapper and Router Method!
