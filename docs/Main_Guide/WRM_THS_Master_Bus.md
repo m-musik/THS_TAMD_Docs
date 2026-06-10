@@ -134,7 +134,7 @@ If any of the channel indicators are not blinking, go back and verify the config
 
 === "Element"
     !!! tip "Element Sessions"
-        To simplify the process of setting up THS in future projects, you can save your Element setup by clicking the hamburger menu icon in the top right corner of the plugin, , then click **Save Session As...**. This will save all the parameters and connections for the plugins in your diagram and can significantly reduce the time needed to setup the master instance of THS.
+        To simplify the process of setting up THS in future projects, you can save your Element setup by clicking the hamburger menu icon in the top right corner of the plugin, then click **Save Session As...**. This will save all the parameters and connections for the plugins in your diagram and can significantly reduce the time needed to setup the master instance of THS.
 
 ## Next Steps
 After completing the procedure documented on this page, THS should be fully configured for operation in your DAW using the Wrapper and Router Method!
