@@ -50,8 +50,12 @@ This method can also be used to quickly undo an update and rollback to an older 
 ### For All Methods
 * **[YSFX](https://github.com/JoepVanlier/ysfx)[^1]:** This plugin allows you to use JSFX plugins in any DAW, not just Reaper. You can either download prebuilt versions of the plugin from the Github repository's [Releases page](https://github.com/JoepVanlier/ysfx/releases), or clone and build the plugin from source.
 
-### Metaplugin and Connector Method
-* **[DDMF Metaplugin](https://ddmf.eu/metaplugin-chainer-vst-au-rtas-aax-wrapper/):** This plugin is a plugin wrapper that can instantiate other plugins inside of itself. Metaplugin is used to host the instance of YSFX that operates THS in Master mode.
+### Wrapper and Router Method
+#### Plugin Wrappers
+* **[DDMF Metaplugin](https://ddmf.eu/metaplugin-chainer-vst-au-rtas-aax-wrapper/):** This plugin is a plugin wrapper that can instantiate other plugins inside of itself. Metaplugin can be used to host the instance of YSFX that operates THS in Master mode.
+* **[Kushview Element](https://kushview.net/element/):** A free to use alternative to Metaplugin, Element can also be used to host the instance of YSFX that operates THS in Master mode.
+
+#### Router Plugins
 * **[Blue Cat's Connector](https://www.bluecataudio.com/Products/Product_Connector/)[^2]:** This plugin is used to send the stem bus outputs to Metaplugin using a sender and receiver structure.
 
 !!! info "Plugin Demos"

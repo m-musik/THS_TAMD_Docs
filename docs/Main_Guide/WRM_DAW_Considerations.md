@@ -1,5 +1,5 @@
 ## Bitwig Studio
-* **Mixed Plugin Formats:** Bitwig can simultaneously load CLAP, VST3, and VST2 plugins. Mixing different plugin formats within a single project can cause synchronization issues between the stem busses and the master bus. When setting up THS, make sure to load the VST3 version of YSFX on your stem busses and within Metaplugin on your master bus track.
+* **Mixed Plugin Formats:** Bitwig can simultaneously load CLAP, VST3, and VST2 plugins. Mixing different plugin formats within a single project can cause synchronization issues between the stem busses and the master bus. When setting up THS, make sure to load the VST3 version of YSFX on your stem busses and within the plugin wrapper on your master bus track.
 
 ??? tip "Setting Plugin Preferences in Bitwig"
     By default, Bitwig will apply its own priority scheme for the plugins displayed inside the DAW. This behavior can be modified and should be updated if you believe you have installed the CLAP and VST3 version of YSFX.

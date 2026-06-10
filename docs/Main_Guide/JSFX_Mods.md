@@ -21,6 +21,13 @@ slider1:t_id=1<1,180,1>-Analog Channel ID
 
 Repeat this process for all sliders with labels. When finished, click the **Save** button. This will update the JSFX file you loaded and will ensure that all future instances of TAM or TAMD will also hide the sliders by default.
 
+??? tip "Regular Expression for Selecting All Sliders"
+    For users that are comfortable with Regular Expressions and have a text editor that can search for them, the following regex can be used to quickly select all sliders in the file:
+
+    ``` regexp
+    (?:slider[0-9]{1,3}:[a-z,_,0-9,=]{1,20}.*>)
+    ```
+
 ## Channel ID Fix
 TAM and versions of TAMD below v1.9 require a small modification to their JSFX source to prevent the Channel ID parameter from changing each time playback begins in your DAW. This is due to differences in the way YSFX stores and handles variable state compared to Reaper. Once you have updated to TAMD v1.9 or later, you will not need to apply this fix.
 

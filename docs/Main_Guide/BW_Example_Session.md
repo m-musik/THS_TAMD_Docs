@@ -1,5 +1,5 @@
 ## Session Overview
-Below is an example session in Bitwig Studio 6.0.6 containing 4 stem busses of 3 individual tracks each, all connected together using the Metaplugin and Connector method. To demonstrate the routing, I have added Test Tone instances before YSFX on all individual tracks to act as an input signal to pass through TAM or TAMD and THS. When fully configured, the session appears as follows in Bitwig's Mix view:
+Below is an example session in Bitwig Studio 6.0.6 containing 4 stem busses of 3 individual tracks each, all connected together using the Wrapper and Router method. In the example, I am using Metaplugin as a wrapper and Blue Cat's Connector as a router. To demonstrate the routing, I have added Test Tone instances before YSFX on all individual tracks to act as an input signal to pass through TAM or TAMD and THS. When fully configured, the session appears as follows in Bitwig's Mix view:
 
 ![Screenshot](../img/Pasted%20image%2020260607191303.png)
 

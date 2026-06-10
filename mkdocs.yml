@@ -4,6 +4,7 @@ theme:
   name: material
   features:
     - navigation.footer
+    - content.tabs.link
   palette: 
 
     # Palette toggle for light mode
@@ -28,6 +29,8 @@ markdown_extensions:
   - pymdownx.details
   - pymdownx.superfences
   - footnotes
+  - pymdownx.tabbed:
+      alternate_style: true
 
 extra_javascript:
   - javascripts/mathjax.js
@@ -45,10 +48,12 @@ plugins:
       background: none
   - redirects:
       redirect_maps:
-        'Main_Guide/MCM_THS_Stem_Buses.md' : 'Main_Guide/MCM_THS_Stem_Busses.md'
-        'Main_Guide/SCM_THS_Stem_Buses.md' : 'Main_Guide/SCM_THS_Stem_Busses.md'
-        'Main_Guide/TAMD_Stem_Buses.md'    : 'Main_Guide/TAMD_Stem_Busses.md'
-        'Main_Guide/Connectivity.md'       : 'Main_Guide/THS_Methods.md'
+        'Main_Guide/MCM_THS_Stem_Buses.md'  : 'Main_Guide/WRM_THS_Stem_Busses.md'
+        'Main_Guide/MCM_THS_Stem_Busses.md' : 'Main_Guide/WRM_THS_Stem_Busses.md'
+        'Main_Guide/SCM_THS_Stem_Buses.md'  : 'Main_Guide/SCM_THS_Stem_Busses.md'
+        'Main_Guide/MCM_Example_Session.md' : 'Main_Guide/WRM_Example_Session.md'
+        'Main_Guide/TAMD_Stem_Buses.md'     : 'Main_Guide/TAMD_Stem_Busses.md'
+        'Main_Guide/Connectivity.md'        : 'Main_Guide/THS_Methods.md'
 
 nav:
   - Main Guide:
@@ -60,10 +65,10 @@ nav:
     - Setting up THS:
       - Current Methods: Main_Guide/THS_Methods.md
       - Universal Methods:
-        - Metaplugin and Connector Method:
-          - DAW-Specific Considerations: Main_Guide/MCM_DAW_Considerations.md
-          - Stem Busses: Main_Guide/MCM_THS_Stem_Busses.md
-          - Master Bus: Main_Guide/MCM_THS_Master_Bus.md
+        - Wrapper and Router Method:
+          - DAW-Specific Considerations: Main_Guide/WRM_DAW_Considerations.md
+          - Stem Busses: Main_Guide/WRM_THS_Stem_Busses.md
+          - Master Bus: Main_Guide/WRM_THS_Master_Bus.md
         - Sidechain Method:
           - Stem Busses: Main_Guide/SCM_THS_Stem_Busses.md
           - Master Bus: Main_Guide/SCM_THS_Master_Bus.md
@@ -81,8 +86,8 @@ nav:
       - FX Sends: Main_Guide/TAMD_FX_Sends.md
       - Master Bus: Main_Guide/TAMD_Master_Bus.md
     - Example Sessions:
-      - Metaplugin and Connector Method:
-        - Cubase: Main_Guide/MCM_Example_Session.md
+      - Wrapper and Router Method:
+        - Cubase: Main_Guide/WRM_Example_Session.md
         - Bitwig: Main_Guide/BW_Example_Session.md
       - Sidechain Method:
         - Cubase: Main_Guide/SCM_Example_Session.md
