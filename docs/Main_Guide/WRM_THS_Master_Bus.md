@@ -25,7 +25,7 @@ To use THS on the master bus, you will need to begin by instantiating your plugi
     
     ![Screenshot](../img/Pasted%20image%2020260609184723.png)
     
-    Begin by loading YSFX. If this is your first time using Element, you can load YSFX by right-clicking anywhere in the grey area of Element, then hover over **Unverified**. Then hover over the plugin format that matches your host DAW's preferred format. Scroll through the list and search for the `ysfx-s FX` plugin, then click it. Otherwise, hover over **Jean Pierre Cimilando/Joep Vanlier** and click the variant of YSFX that matches your host DAW's preferred format. Once loaded, YSFX will appear as follows:
+    Begin by loading YSFX. If this is your first time using Element, you can load YSFX by right-clicking anywhere in the grey area of Element, then hover over **Unverified**. Then hover over the plugin format that matches your host DAW's preferred format. Scroll through the list and search for the `ysfx-s FX` plugin, then click it. Otherwise, hover over **Jean Pierre Cimilando / Joep Vanlier** and click the variant of YSFX that matches your host DAW's preferred format. Once loaded, YSFX will appear as follows:
     
     ![Screenshot](../img/Pasted%20image%2020260609184917.png)
     

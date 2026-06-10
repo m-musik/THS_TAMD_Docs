@@ -26,3 +26,5 @@ Just because your DAW is not listed above does not mean it is unsupported! By ad
 This guide has been written using MkDocs and the Material for MkDocs theme. This provides handy navigation features, including next and previous links at the bottom of each page. You can use these links to navigate through the guide without needing to manually interact with the navigation menu. If you should want to visit a specific section, you can navigate to it directly via the menu.
 
 Additionally, each page features a table of contents that can be used to jump between major sections of each page. Each page of this guide, and each major section of each page, can be linked to directly for quick recall or sharing.
+
+Guide pages also feature content tabs that are synchronized across the guide. This means that you can select the variant that applies to your configuration, and the rest of the guide will automatically display the appropriate sections for your selected configuration. You can change this at any time by clicking a different tab where they appear.

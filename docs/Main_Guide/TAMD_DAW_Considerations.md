@@ -8,6 +8,9 @@ You may experience issues with TAM(D) forgetting your last selected Link setting
 
 Starting around Logic Pro 10.7.9, Apple introduced a new scheduling algorithm that aggressively halts processing on any track that Logic believes will not contribute to the output of the project. This primarily affects self-generating plugins that can produce sound without an audio or MIDI event on the track. It also affects TAM(D) as it depends upon a continuous stream of audio blocks to operate correctly.
 
+### Placement of TAM(D) Channels
+Since Logic requires an instance of your selected plugin wrapper as the **first** Audio FX on all base tracks to keep them awake for processing, TAM(D) should be placed as the **second** effect on all tracks instead of the first, immediately following your plugin wrapper.
+
 ### Synchronization
 You may experience synchronization issues upon opening a Logic project containing TAM(D), even after following the current best procedure. To work around this, start and stop playback of your project once after opening the project. All instances of TAM(D) should remain synchronized for the rest of the time you have the project open.
 
