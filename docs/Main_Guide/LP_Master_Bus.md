@@ -28,17 +28,67 @@ To use THS on the master bus, you will need to begin by instantiating your plugi
         Nodes can be rearranged and moved within Metaplugin at any time. Feel free to rearrange and move them as desired to improve the legibility of the connectivity graph.
 
 === "Element"
-    **Work in progress!**
-
+    When you first open Element, it will resemble the following:
+    
+    ![Screenshot](../img/Pasted%20image%2020260609220533.png)
+    
+    Begin by loading YSFX. If this is your first time using Element, you can load YSFX by right-clicking anywhere in the grey area of Element, then hover over **Unverified**. Then hover over the plugin format that matches your host DAW's preferred format. Scroll through the list and search for the `ysfx-s FX` plugin, then click it. Otherwise, hover over **Jean Pierre Cimilando/Joep Vanlier** and click the variant of YSFX that matches your host DAW's preferred format. Once loaded, YSFX will appear as follows:
+    
+    ![Screenshot](../img/Pasted%20image%2020260609220554.png)
+    
+    !!! warning "Mixing Plugin Formats"
+        When adding your wrapper and router plugins to Element, make sure to select the same format as the plugins used by your host DAW. For example, if you are using Cubase, make sure you select VST3 plugins. If you are using Logic, select AU plugins instead. Mixing plugin formats can cause synchronization issues.
+    
+    Next, right-click in the grey area of the plugin, hover over **Element**, and click the **Audio Mixer** option. This will add a four-channel mixer to the node graph:
+    
+    ![Screenshot](../img/Pasted%20image%2020260609220631.png)
+    
+    !!! tip "Moving Nodes in Element"
+        Nodes can be rearranged and moved within Element at any time. Feel free to rearrange and move them as desired to improve the legibility of the connectivity graph.
+    
+    To make use of the synchronization tone, we are going to route the plugin's sidechain input into the four-channel mixer, along with the main stereo output of YSFX. By default, Element only has two input pins, so we must add two more pins to accept a sidechain input. To do this, double-click the **GRAPH** tab on the left side of the plugin. Then, click the **plus button (+)** next to Audio Ins until it shows a value of 4. The Audio In node will update and should now have 4 pins:
+    
+    ![Screenshot](../img/Pasted%20image%2020260609220659.png)
+    
+    In Element, the pins on the top of all plugin nodes are considered to be the inputs, and the pins on the bottom are the outputs. The channel numbers increase from left to right, so the first two pins on the top and bottom are your "normal" stereo input and output pins. We can now make the following connections in our graph: 
+    
+    * Connect pins 3-4 of the Audio In node to input pins 1-2 of the Audio Mixer
+    * Connect output pins 1-2 of YSFX to input pins 3-4 of the Audio Mixer
+    * Connect output pins 1-2 of the Audio Mixer to pins 1-2 of the Audio Out node
+    
+    When connected, your node graph should resemble the following:
+    
+    ![Screenshot](../img/Pasted%20image%2020260609221056.png)
+    
+    Before we can adjust the mixer, we need to connect the synchronization tone to Element as its sidechain input:
+    
+    ![Screenshot](../img/Pasted%20image%2020260609221300.png)
+    
+    Once `SYNC_TONE` is connected as the sidechain input, start and stop playback in the DAW one time to wake the track. Note that Element has its own set of transport controls inside the plugin and these are not connected to Logic. You will need to be sure to click out of or close Element before starting and stopping playback.
+    
+    Next, double-click the Audio Mixer node to open the mixer controls. Since we are only using the first two channels, we can mute the third and fourth channels. Additionally, we can leverage the mixer's level control to attenuate channel 1 by -90 dB:
+    
+    ![Screenshot](../img/Pasted%20image%2020260609221818.png)
+    
+    This will reduce the level of the sidechain input by an additional 90 dB for a cumulative attenuation of -282 dB.
+    
 ## Router Plugin
-=== "Blue Cat's Connector"
-    Next, load enough instances of Blue Cat's Connector to receive sound from all the stem busses in your project. In my example, I have four stem busses and use Metaplugin, so I will load 4 instances of Connector:
+=== "Blue Cat's Connector"    
+    Next, load enough instances of Blue Cat's Connector to receive sound from all the stem busses in your project. I have four stem busses in my example, so I will load 4 instances of Connector:
     
-    ![Screenshot](../img/Pasted%20image%2020260606205248.png)
+    === "Metaplugin"
+        ![Screenshot](../img/Pasted%20image%2020260606205248.png)
     
-    Next, we will connect the outputs of the Connector instances to the appropriate inputs of YSFX. This is the step that enables use of THS outside of Reaper as most DAWs do not allow for arbitrary routing of many channels the way we can in Metaplugin. It's also important to note that THS expects the stem bus inputs to begin on Channels 3-4, ***not*** Channels 1-2. This means that when we connect the Connector instances to YSFX, we will skip the first two input pins and begin our connections with the second set of pins:
+    === "Element"
+        ![Screenshot](../img/Pasted%20image%2020260609221338.png)
     
-    ![Screenshot](../img/Pasted%20image%2020260606205438.png)
+    Next, we will connect the outputs of the Connector instances to the appropriate inputs of YSFX. This is the step that enables use of THS outside of Reaper as most DAWs do not allow for arbitrary routing of many channels the way we can in wrappers like Metaplugin and Element. It's also important to note that THS expects the stem bus inputs to begin on Channels 3-4, ***not*** Channels 1-2. This means that when we connect the Connector instances to YSFX, we will skip the first two input pins and begin our connections with the second set of pins:
+    
+    === "Metaplugin"
+        ![Screenshot](../img/Pasted%20image%2020260606205438.png)
+    
+    === "Element"
+        ![Screenshot](../img/Pasted%20image%2020260609221448.png)
     
     We can now begin to configure the Connector instances to receive sound from the senders we previously instantiated on the stem busses. Before proceeding, it's critical to understand the channel assignments THS expects the stem busses to follow:
     
@@ -84,15 +134,15 @@ To use THS on the master bus, you will need to begin by instantiating your plugi
     When a new router plugin is identified, it will be documented here!
 
 ## Connect Sidechain
-Now that the receiver instances of Connector have been configured, we can set the `SYNC_TONE` track as the sidechain input for the plugin wrapper:
-
 === "Metaplugin"
+    Now that the receiver instances of Connector have been configured, we can set the `SYNC_TONE` track as the sidechain input for the plugin wrapper:
+    
     ![Screenshot](../img/Pasted%20image%2020260606210248.png)
 
-=== "Element"
-    **Work in progress!**
+    Once set, start and stop playback in Logic one time to ensure all tracks are alive and synchronized.
 
-Once set, start and stop playback in Logic one time to ensure all tracks are alive and synchronized.
+=== "Element"
+    The sidechain was already connected when setting up the node graph, so you can skip this step!
 
 ## YSFX
 Now that all tracks are alive, we can configure the master instance of THS. Double-click the YSFX node in your plugin wrapper. By default, it will look like the following:
@@ -128,7 +178,8 @@ Once verified as functional, consider saving the state of your plugin wrapper as
         To simplify the process of setting up THS in future projects, you can save your Metaplugin setup by clicking the **User presets** tab, then click **Save new preset**. This will save all the parameters and connections for the plugins in your diagram and can significantly reduce the time needed to setup the master instance of THS.
 
 === "Element"
-    **Work in progress!**
+    !!! tip "Element Sessions"
+        To simplify the process of setting up THS in future projects, you can save your Element setup by clicking the hamburger menu icon in the top right corner of the plugin, then click **Save Session As...**. This will save all the parameters and connections for the plugins in your diagram and can significantly reduce the time needed to setup the master instance of THS.
 
 ## Next Steps
 After completing the procedure documented on this page, THS should be fully configured for operation in Logic Pro!
