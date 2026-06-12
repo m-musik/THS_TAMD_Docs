@@ -41,7 +41,7 @@ To use THS on the master bus, you will need to begin by instantiating your plugi
 
 ## Router Plugin
 === "Blue Cat's Connector"
-    Next, load enough instances of Blue Cat's Connector to receive sound from all the stem busses in your project. I have four stem busses in my example, so I will load 4 instances of Connector:
+    Next, load enough instances of Blue Cat's Connector to receive sound from all the stem busses in your project. I have four stem busses in my example, so I will load four instances of Connector:
     
     === "Metaplugin"
         ![Screenshot](../img/Pasted%20image%2020260601211805.png)
@@ -49,34 +49,81 @@ To use THS on the master bus, you will need to begin by instantiating your plugi
     === "Element"
         ![Screenshot](../img/Pasted%20image%2020260609190442.png)
     
-    Next, we will connect the outputs of the Connector instances to the appropriate inputs of YSFX. This is the step that enables use of THS outside of Reaper as most DAWs do not allow for arbitrary routing of many channels the way we can in wrappers like Metaplugin and Element. It's also important to note that THS expects the stem bus inputs to begin on Channels 3-4, ***not*** Channels 1-2. This means that when we connect the Connector instances to YSFX, we will skip the first two input pins and begin our connections with the second set of pins:
-    
+=== "JSFX Audio Router"
     === "Metaplugin"
-        ![Screenshot](../img/Pasted%20image%2020260601212243.png)
+        Next, load enough instances of YSFX to receive sound from all the stem busses in your project. I have four stem busses in my example, so I will load four additional instances of YSFX:
+        
+        ![Screenshot](../img/Pasted%20image%2020260612062513.png)
     
     === "Element"
+        Next, load a second instance of YSFX in Element:
+        
+        ![Screenshot](../img/Pasted%20image%2020260612061529.png)
+        
+        To improve the legibility of the node graph, we will adjust the number of pins displayed on the new instance of YSFX. Right-click the new YSFX node, then click the **Ports...** option. The following pane will appear:
+        
+        ![Screenshot](../img/Pasted%20image%2020260612061538.png)
+        
+        Click **Hide all** to hide all the currently visible pins on the YSFX node. Then, scroll down in the list to locate the **Output 1** and **Output 2** options. Check their boxes:
+        
+        ![Screenshot](../img/Pasted%20image%2020260612061554.png)
+        
+        When finished, your second YSFX node should look like the following:
+        
+        ![Screenshot](../img/Pasted%20image%2020260612061559.png)
+        
+        Next, right-click the compact YSFX node and click **Duplicate**. This will create a new copy of the YSFX node with the same compact pinout. Repeat this process until you have created enough instances for your project's stem bus senders. I have four stem busses in my example, so I will create enough copies until I have four additional instances of YSFX:
+        
+        ![Screenshot](../img/Pasted%20image%2020260612061616.png)
+
+=== "Other Router"
+    When a new router plugin is identified, it will be documented here!
+
+Next, we will connect the outputs of the router plugin instances to the appropriate inputs of the YSFX instance that will host THS. This is the step that enables use of THS outside of Reaper as most DAWs do not allow for arbitrary routing of many channels the way we can in wrappers like Metaplugin and Element. It's also important to note that THS expects the stem bus inputs to begin on Channels 3-4, ***not*** Channels 1-2. This means that when we connect the router instances to the YSFX that will host THS, we will skip the first two input pins and begin our connections with the second set of pins:
+
+=== "Metaplugin"
+    === "Blue Cat's Connector"
+        ![Screenshot](../img/Pasted%20image%2020260601212243.png)
+    
+    === "JSFX Audio Router"
+        ![Screenshot](../img/Pasted%20image%2020260612062532.png)
+    
+    === "Other Router"
+        When a new router plugin is identified, it will be documented here!
+
+=== "Element"    
+    === "Blue Cat's Connector"
         ![Screenshot](../img/Pasted%20image%2020260609190611.png)
     
-    We can now begin to configure the Connector instances to receive sound from the senders we previously instantiated on the stem busses. Before proceeding, it's critical to understand the channel assignments THS expects the stem busses to follow:
+    === "JSFX Audio Router"
+        ![Screenshot](../img/Pasted%20image%2020260612061756.png)
     
-    | **Stem** | **Channel Assignment** |
-    | -------- | ---------------------- |
-    | 1        | 3-4                    |
-    | 2        | 5-6                    |
-    | 3        | 7-8                    |
-    | 4        | 9-10                   |
-    | 5        | 11-12                  |
-    | 6        | 13-14                  |
-    | 7        | 15-16                  |
-    | 8        | 17-18                  |
-    
-    Based on the connection diagram we've created, this means that, from left to right, our Connector instances will be used for stems 1, 2, 3, and 4.
-    
-    Begin by opening the Connector instance connected to input pins 3-4 of YSFX. This will be the Stem 1 receiver. By default, Connector will appear as follows:
+    === "Other Router"
+        When a new router plugin is identified, it will be documented here!
+
+We can now begin to configure the router instances to receive sound from the senders we previously instantiated on the stem busses. Before proceeding, it's critical to understand the channel assignments THS expects the stem busses to follow:
+
+| **Stem** | **Channel Assignment** |
+| -------- | ---------------------- |
+| 1        | 3-4                    |
+| 2        | 5-6                    |
+| 3        | 7-8                    |
+| 4        | 9-10                   |
+| 5        | 11-12                  |
+| 6        | 13-14                  |
+| 7        | 15-16                  |
+| 8        | 17-18                  |
+
+Based on the connection diagram we've created, this means that, from left to right, our router instances will be used for stems 1, 2, 3, and 4.
+
+Begin by opening the router connected to input pins 3-4 of the YSFX instance that will host THS. This will be the Stem 1 receiver.
+
+=== "Blue Cat's Connector"
+    By default, Connector will appear similar to the following:
     
     ![Screenshot](../img/Pasted%20image%2020260601213229.png)
     
-    Begin by enabling **RCV** mode. Connector will then appear as follows:
+    Begin by enabling **RCV** mode. Connector will then appear similar to the following:
     
     ![Screenshot](../img/Pasted%20image%2020260601213327.png)
     
@@ -96,12 +143,27 @@ To use THS on the master bus, you will need to begin by instantiating your plugi
     
     !!! tip "Connector Presets – Receiver"
         To simplify the process of setting up THS in future projects, you can save the configurations you set for your receiver instances of Connector as presets. That way, you can simply recall the presets to configure your receiver instances of Connector.
+    
+=== "JSFX Audio Router"
+    By default, YSFX will look similar to the following:
+    
+    ![Screenshot](../img/Pasted%20image%2020260612074828.png)
+    
+    To load the audio router, click **Load** and navigate to the folder where you saved your copy of the plugin. Select the JSFX file for the audio router, and then click **Open**. Once loaded, YSFX should look similar to the following:
+    
+    ![Screenshot](../img/Pasted%20image%2020260612061820.png)
+    
+    We will now configure the router as a receiver. Since this receiver corresponds to Stem Bus 1, we will set the **Router Channel** to 1, change the **Router Type** to **Receiver**, and set the **Router Enabled** toggle to **Enabled**. When finished, the router will appear similar to the following:
+    
+    ![Screenshot](../img/Pasted%20image%2020260612061826.png)
+    
+    This is all that is needed to configure the receiver instance of the audio router. Repeat this process for as many stem as you would like to route into THS, up the maximum of 8 stems. As you configure each additional receiver, make sure to update the **Router Channel** to match the corresponding sender's channel.
 
 === "Other Router"
     When a new router plugin is identified, it will be documented here!
 
-## YSFX
-Now that we have connected and configured all the receiver instances of Connector, we can configure the master instance of THS. Double-click the YSFX node in your router pulgin. By default, it will look like the following:
+## YSFX for THS
+Now that we have connected and configured all the receiver instances of Connector, we can configure the master instance of THS. Double-click the YSFX node in your wrapper plugin. By default, it will look like the following:
 
 ![Screenshot](../img/Pasted%20image%2020260601214615.png)
 
@@ -123,6 +185,9 @@ If any of the channel indicators are not blinking, go back and verify the config
     If the sender/receiver pairs are configured correctly, the level meter on the right-hand side of your Connector receivers will show signal:
     
     ![Screenshot](../img/Pasted%20image%2020260601215608.png)
+
+=== "JSFX Audio Router"
+    There are currently no visual indicators for the JSFX Audio Router. Should you encounter trouble, verify that the **Router Channel** and **Router Type** options are set correctly across all sender and receiver instances.
 
 === "Other Router"
     When a new router plugin is identified, it will be documented here!
