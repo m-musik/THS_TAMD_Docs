@@ -70,6 +70,7 @@ nav:
           - Stem Busses: Main_Guide/WRM_THS_Stem_Busses.md
           - Master Bus: Main_Guide/WRM_THS_Master_Bus.md
         - Sidechain Method:
+          - DAW-Specific Considerations: Main_Guide/SCM_DAW_Considerations.md
           - Stem Busses: Main_Guide/SCM_THS_Stem_Busses.md
           - Master Bus: Main_Guide/SCM_THS_Master_Bus.md
       - DAW-Specific Methods:

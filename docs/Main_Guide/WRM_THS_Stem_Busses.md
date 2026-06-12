@@ -47,8 +47,3 @@ The main parameter to pay attention to at this stage is the **Stem ID**. THS sup
 
 === "Other Router"
     When a new router plugin is identified, it will be documented here!
-
-## Output Routing
-Unless otherwise noted in the [DAW-Specific Considerations for THS](MCM_DAW_Considerations.md), I **strongly** recommend modifying the output routing of your stem busses to prevent their sound from ending up on your master bus. How you do this will vary between DAWs. In Cubase, simply changing the output routing option to **No Bus** will do the trick:
-
-![Screenshot](../img/Pasted%20image%2020260601210526.png)

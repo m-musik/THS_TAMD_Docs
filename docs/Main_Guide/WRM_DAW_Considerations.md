@@ -8,6 +8,8 @@
 
     ![Screenshot](../img/Pasted%20image%2020260607081225.png)
 
+* **Suspended Plugins:** If you encounter issues with Bitwig suspending/sleeping any of the plugins needed to operate THS, you can set the Suspend setting to **Never** for the affected plugin in Bitwig's Inspector panel after selecting the plugin in the Device Panel. This will force the selected plugin to remain active at all times.
+
 ## Universal Audio LUNA
 * **Sleeping Tracks:** Due to the way LUNA manages its audio processing threads, any track that is not actively producing sound will likely be put to sleep. This may cause synchronization issues while using THS within LUNA.
 
