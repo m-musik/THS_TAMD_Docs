@@ -1,12 +1,12 @@
 To use THS on a stem bus, you will need to begin by instantiating the following plugins, in order, at **the end** of the stem bus's insert slots:
 
-1. YSFX
+1. YSFX for THS
 2. Router Plugin
 
 !!! tip "Post-Fader Inserts"
     If you are using a DAW that supports post-fader inserts, I would recommend making your router plugin a post-fader insert on your stem busses. Doing so will allow you to use the channel fader to control the level of the stem bus and still use the channel meter when mixing.
 
-## YSFX
+## YSFX for THS
 First, open YSFX. By default, YSFX will look similar to the following:
 
 ![Screenshot](../img/Pasted%20image%2020260601204005.png)
@@ -64,3 +64,6 @@ The main parameter to pay attention to at this stage is the **Stem ID**. THS sup
 
 === "Other Router"
     When a new router plugin is identified, it will be documented here!
+
+## Output Routing
+Based upon testing performed across several DAWs, I recommend routing the output of each stem bus to the track that will host your session's THS master. The audio engines in some DAWs, like Bitwig and Logic Pro, do not behave well when there is no direct route between the stem busses and the master track. Making this connection will have no effect on the output of your session's THS master as we will setup the plugin wrapper in a way that prevents the DAW's normal summed input from reaching THS.
