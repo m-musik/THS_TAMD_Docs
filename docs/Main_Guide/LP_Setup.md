@@ -28,7 +28,7 @@ At this point, the `SYNC_TONE` track is ready for use. When finished, it should 
 
 ## Bypassing the Sync Tone
 !!! warning "Testing Needed"
-    Additional testing is needed to verify that bypassing the sync tone during mixdown will not negatively affect the operation of THS or the routing structure used to enable use of THS. Please message mmusik on Gearspace or [open an issue](https://github.com/m-musik/THS_TAMD_Docs/issues) on the guide's Github repository if you encounter problems when bypassing the sync tone.
+    Additional testing is needed to verify that bypassing the sync tone during mixdown will not negatively affect the operation of THS or the routing structure used to enable use of THS. Please [open an issue](https://github.com/m-musik/THS_TAMD_Docs/issues) on the guide's Github repository if you encounter problems when bypassing the sync tone.
 
 When you are finished mixing and producing your track and ready to bounce to audio, you can mute the `SYNC_TONE` track prior to bouncing. This will prevent the synchronization tone you used from becoming part of your final mixdown.
 
