@@ -1,0 +1,2231 @@
+<!DOCTYPE html><html lang="en" class="no-js"><head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+        <link rel="prev" href="../WRM_THS_Stem_Busses/">
+      
+      
+        <link rel="next" href="../SCM_DAW_Considerations/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.6">
+    
+    
+      
+        <title>Master Bus - THS and TAMD Outside of Reaper</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.484c7ddc.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&amp;display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="https://unpkg.com/katex@0/dist/katex.min.css">
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  <link href="../../assets/stylesheets/glightbox.min.css" rel="stylesheet"><script src="../../assets/javascripts/glightbox.min.js"></script><style id="glightbox-style">
+            html.glightbox-open { overflow: initial; height: 100%; }
+            .gslide-title { margin-top: 0px; user-select: text; }
+            .gslide-desc { color: #666; user-select: text; }
+            .gslide-image img { background: none; }
+            .gscrollbar-fixer { padding-right: 15px; }
+            .gdesc-inner { font-size: 0.75rem; }
+            body[data-md-color-scheme="slate"] .gdesc-inner { background: var(--md-default-bg-color); }
+            body[data-md-color-scheme="slate"] .gslide-title { color: var(--md-default-fg-color); }
+            body[data-md-color-scheme="slate"] .gslide-desc { color: var(--md-default-fg-color); }
+        </style></head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#general-setup" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="THS and TAMD Outside of Reaper" class="md-header__button md-logo" aria-label="THS and TAMD Outside of Reaper" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"></path></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"></path></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            THS and TAMD Outside of Reaper
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Master Bus
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo" aria-label="Switch to dark mode" type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_1" hidden="">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"></path></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="indigo" data-md-color-accent="indigo" aria-label="Switch to light mode" type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_0" hidden="">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12s-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"></path></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"></path></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required="">
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"></path></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"></path></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"></path></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix="">
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="THS and TAMD Outside of Reaper" class="md-nav__button md-logo" aria-label="THS and TAMD Outside of Reaper" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"></path></svg>
+
+    </a>
+    THS and TAMD Outside of Reaper
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix="">
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_1" checked="">
+        
+          
+          <label class="md-nav__link" for="__nav_1" id="__nav_1_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Main Guide
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_1_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_1">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Main Guide
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix="">
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Overview/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Overview
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_1_2">
+        
+          
+          <label class="md-nav__link" for="__nav_1_2" id="__nav_1_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Getting Started
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_1_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_1_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Getting Started
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix="">
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Plugins/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Plugins
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../JSFX_Mods/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    JSFX Modifications
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Routing_Structure/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Routing for THS and TAM(D)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_1_3" checked="">
+        
+          
+          <label class="md-nav__link" for="__nav_1_3" id="__nav_1_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Setting up THS
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_1_3_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_1_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Setting up THS
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix="">
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../THS_Methods/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Current Methods
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_1_3_2" checked="">
+        
+          
+          <label class="md-nav__link" for="__nav_1_3_2" id="__nav_1_3_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Universal Methods
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_1_3_2_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_1_3_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Universal Methods
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix="">
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_1_3_2_1" checked="">
+        
+          
+          <label class="md-nav__link" for="__nav_1_3_2_1" id="__nav_1_3_2_1_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Wrapper and Router Method
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="4" aria-labelledby="__nav_1_3_2_1_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_1_3_2_1">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Wrapper and Router Method
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix="">
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../WRM_DAW_Considerations/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    DAW-Specific Considerations
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../WRM_THS_Stem_Busses/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Stem Busses
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Master Bus
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Master Bus
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
+      
+        <li class="md-nav__item">
+  <a href="#general-setup" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        General Setup
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#router-plugin" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Router Plugin
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ysfx-for-ths" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        YSFX for THS
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#wrapper-recall" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Wrapper Recall
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#next-steps" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Next Steps
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_1_3_2_2">
+        
+          
+          <label class="md-nav__link" for="__nav_1_3_2_2" id="__nav_1_3_2_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Sidechain Method
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="4" aria-labelledby="__nav_1_3_2_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_1_3_2_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Sidechain Method
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix="">
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../SCM_DAW_Considerations/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    DAW-Specific Considerations
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../SCM_THS_Stem_Busses/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Stem Busses
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../SCM_THS_Master_Bus/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Master Bus
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_1_3_3">
+        
+          
+          <label class="md-nav__link" for="__nav_1_3_3" id="__nav_1_3_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    DAW-Specific Methods
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_1_3_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_1_3_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    DAW-Specific Methods
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix="">
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_1_3_3_1">
+        
+          
+          <label class="md-nav__link" for="__nav_1_3_3_1" id="__nav_1_3_3_1_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Logic Pro
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="4" aria-labelledby="__nav_1_3_3_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_1_3_3_1">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Logic Pro
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix="">
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../LP_Issues/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Known Issues
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../LP_Setup/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Project Setup
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../LP_Tracks/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Tracks
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../LP_Stem_Busses/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Stem Busses
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../LP_Master_Bus/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Master Bus
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_1_4">
+        
+          
+          <label class="md-nav__link" for="__nav_1_4" id="__nav_1_4_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Setting up TAM(D)
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_1_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_1_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Setting up TAM(D)
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix="">
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../TAMD_DAW_Considerations/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    DAW-Specific Considerations
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../TAMD_Channels/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Channels
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../TAMD_Stem_Busses/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Stem Busses
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../TAMD_FX_Sends/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    FX Sends
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../TAMD_Master_Bus/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Master Bus
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_1_5">
+        
+          
+          <label class="md-nav__link" for="__nav_1_5" id="__nav_1_5_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Example Sessions
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_1_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_1_5">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Example Sessions
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix="">
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_1_5_1">
+        
+          
+          <label class="md-nav__link" for="__nav_1_5_1" id="__nav_1_5_1_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Wrapper and Router Method
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_1_5_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_1_5_1">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Wrapper and Router Method
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix="">
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../WRM_Example_Session/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Cubase
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../BW_Example_Session/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Bitwig
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_1_5_2">
+        
+          
+          <label class="md-nav__link" for="__nav_1_5_2" id="__nav_1_5_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Sidechain Method
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_1_5_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_1_5_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Sidechain Method
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix="">
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../SCM_Example_Session/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Cubase
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_1_5_3">
+        
+          
+          <label class="md-nav__link" for="__nav_1_5_3" id="__nav_1_5_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    DAW-Specific Methods
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_1_5_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_1_5_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    DAW-Specific Methods
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix="">
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../LP_Example_Session/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Logic Pro
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Going_Farther/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Going Farther
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
+      
+        <li class="md-nav__item">
+  <a href="#general-setup" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        General Setup
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#router-plugin" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Router Plugin
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ysfx-for-ths" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        YSFX for THS
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#wrapper-recall" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Wrapper Recall
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#next-steps" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Next Steps
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+  <h1>Master Bus</h1>
+
+<h2 id="general-setup">General Setup</h2>
+<p>To use THS on the master bus, you will need to begin by instantiating your plugin wrapper as the <strong>first</strong> insert on your master bus.</p>
+<div class="tabbed-set tabbed-alternate" data-tabs="1:2"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio"><input id="__tabbed_1_2" name="__tabbed_1" type="radio"><div class="tabbed-labels"><label for="__tabbed_1_1">Metaplugin</label><label for="__tabbed_1_2">Element</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<p>When you first open Metaplugin, it will resemble the following:</p>
+<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../../img/Pasted%20image%2020260601210955.png" data-desc-position="bottom"><img alt="Screenshot" src="../../img/Pasted%20image%2020260601210955.png"></a></p>
+<p>Begin by loading YSFX. You can do this manually by right-clicking anywhere in the grey area of Metaplugin, then clicking <strong>Load plugin from file...</strong>, or by clicking <strong>Options...</strong> in the bottom-left corner of the plugin and selecting any of the available scan options to populate the <strong>Plugin library</strong>. Then search for YSFX in the plugin list and drag-and-drop it onto the canvas. Once loaded, YSFX will appear as follows:</p>
+<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../../img/Pasted%20image%2020260601211400.png" data-desc-position="bottom"><img alt="Screenshot" src="../../img/Pasted%20image%2020260601211400.png"></a></p>
+<div class="admonition warning">
+<p class="admonition-title">Mixing Plugin Formats</p>
+<p>When adding your wrapper and router plugins to Metaplugin, make sure to select the same format as the plugins used by your host DAW. For example, if you are using Cubase, make sure you select VST3 plugins. If you are using Logic, select AU plugins instead. Mixing plugin formats can cause synchronization issues.</p>
+</div>
+<p>In Metaplugin, the pins on the top of all plugin nodes are considered to be the inputs, and the pins on the bottom are the outputs. The channel numbers increase from left to right, so the first two pins on the top and bottom are your "normal" stereo input and output pins. We can begin by connecting the first two pins on the bottom of YSFX to the two pins of the Audio Output node to connect what will eventually be the output of THS to the output of Metaplugin:</p>
+<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../../img/Pasted%20image%2020260601211615.png" data-desc-position="bottom"><img alt="Screenshot" src="../../img/Pasted%20image%2020260601211615.png"></a></p>
+<div class="admonition tip">
+<p class="admonition-title">Moving Nodes in Metaplugin</p>
+<p>Nodes can be rearranged and moved within Metaplugin at any time. Feel free to rearrange and move them as desired to improve the legibility of the connectivity graph.</p>
+</div>
+</div>
+<div class="tabbed-block">
+<p>When you first open Element, it will resemble the following:</p>
+<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../../img/Pasted%20image%2020260609184723.png" data-desc-position="bottom"><img alt="Screenshot" src="../../img/Pasted%20image%2020260609184723.png"></a></p>
+<p>Begin by loading YSFX. If this is your first time using Element, you can load YSFX by right-clicking anywhere in the grey area of Element, then hover over <strong>Unverified</strong>. Then hover over the plugin format that matches your host DAW's preferred format. Scroll through the list and search for the <code>ysfx-s FX</code> plugin, then click it. Otherwise, hover over <strong>Jean Pierre Cimilando / Joep Vanlier</strong> and click the variant of YSFX that matches your host DAW's preferred format. Once loaded, YSFX will appear as follows:</p>
+<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../../img/Pasted%20image%2020260609184917.png" data-desc-position="bottom"><img alt="Screenshot" src="../../img/Pasted%20image%2020260609184917.png"></a></p>
+<div class="admonition warning">
+<p class="admonition-title">Mixing Plugin Formats</p>
+<p>When adding your wrapper and router plugins to Element, make sure to select the same format as the plugins used by your host DAW. For example, if you are using Cubase, make sure you select VST3 plugins. If you are using Logic, select AU plugins instead. Mixing plugin formats can cause synchronization issues.</p>
+</div>
+<p>In Element, the pins on the top of all plugin nodes are considered to be the inputs, and the pins on the bottom are the outputs. The channel numbers increase from left to right, so the first two pins on the top and bottom are your "normal" stereo input and output pins. We can begin by connecting the first two pins on the bottom of YSFX to the two pins of the Audio Out node to connect what will eventually be the output of THS to the output of Element:</p>
+<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../../img/Pasted%20image%2020260609184938.png" data-desc-position="bottom"><img alt="Screenshot" src="../../img/Pasted%20image%2020260609184938.png"></a></p>
+<div class="admonition tip">
+<p class="admonition-title">Moving Nodes in Element</p>
+<p>Nodes can be rearranged and moved within Element at any time. Feel free to rearrange and move them as desired to improve the legibility of the connectivity graph.</p>
+</div>
+</div>
+</div>
+</div>
+<h2 id="router-plugin">Router Plugin</h2>
+<div class="tabbed-set tabbed-alternate" data-tabs="2:3"><input checked="checked" id="__tabbed_2_1" name="__tabbed_2" type="radio"><input id="__tabbed_2_2" name="__tabbed_2" type="radio"><input id="__tabbed_2_3" name="__tabbed_2" type="radio"><div class="tabbed-labels"><label for="__tabbed_2_1">Blue Cat's Connector</label><label for="__tabbed_2_2">JSFX Audio Router</label><label for="__tabbed_2_3">Other Router</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<p>Next, load enough instances of Blue Cat's Connector to receive sound from all the stem busses in your project. I have four stem busses in my example, so I will load four instances of Connector:</p>
+<div class="tabbed-set tabbed-alternate" data-tabs="3:2"><input checked="checked" id="__tabbed_3_1" name="__tabbed_3" type="radio"><input id="__tabbed_3_2" name="__tabbed_3" type="radio"><div class="tabbed-labels"><label for="__tabbed_3_1">Metaplugin</label><label for="__tabbed_3_2">Element</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../../img/Pasted%20image%2020260601211805.png" data-desc-position="bottom"><img alt="Screenshot" src="../../img/Pasted%20image%2020260601211805.png"></a></p>
+</div>
+<div class="tabbed-block">
+<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../../img/Pasted%20image%2020260609190442.png" data-desc-position="bottom"><img alt="Screenshot" src="../../img/Pasted%20image%2020260609190442.png"></a></p>
+</div>
+</div>
+</div>
+</div>
+<div class="tabbed-block">
+<div class="tabbed-set tabbed-alternate" data-tabs="4:2"><input checked="checked" id="__tabbed_4_1" name="__tabbed_4" type="radio"><input id="__tabbed_4_2" name="__tabbed_4" type="radio"><div class="tabbed-labels"><label for="__tabbed_4_1">Metaplugin</label><label for="__tabbed_4_2">Element</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<p>Next, load enough instances of YSFX to receive sound from all the stem busses in your project. I have four stem busses in my example, so I will load four additional instances of YSFX:</p>
+<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../../img/Pasted%20image%2020260612062513.png" data-desc-position="bottom"><img alt="Screenshot" src="../../img/Pasted%20image%2020260612062513.png"></a></p>
+</div>
+<div class="tabbed-block">
+<p>Next, load a second instance of YSFX in Element:</p>
+<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../../img/Pasted%20image%2020260612061529.png" data-desc-position="bottom"><img alt="Screenshot" src="../../img/Pasted%20image%2020260612061529.png"></a></p>
+<p>To improve the legibility of the node graph, we will adjust the number of pins displayed on the new instance of YSFX. Right-click the new YSFX node, then click the <strong>Ports...</strong> option. The following pane will appear:</p>
+<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../../img/Pasted%20image%2020260612061538.png" data-desc-position="bottom"><img alt="Screenshot" src="../../img/Pasted%20image%2020260612061538.png"></a></p>
+<p>Click <strong>Hide all</strong> to hide all the currently visible pins on the YSFX node. Then, scroll down in the list to locate the <strong>Output 1</strong> and <strong>Output 2</strong> options. Check their boxes:</p>
+<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../../img/Pasted%20image%2020260612061554.png" data-desc-position="bottom"><img alt="Screenshot" src="../../img/Pasted%20image%2020260612061554.png"></a></p>
+<p>When finished, your second YSFX node should look like the following:</p>
+<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../../img/Pasted%20image%2020260612061559.png" data-desc-position="bottom"><img alt="Screenshot" src="../../img/Pasted%20image%2020260612061559.png"></a></p>
+<p>Next, right-click the compact YSFX node and click <strong>Duplicate</strong>. This will create a new copy of the YSFX node with the same compact pinout. Repeat this process until you have created enough instances for your project's stem bus senders. I have four stem busses in my example, so I will create enough copies until I have four additional instances of YSFX:</p>
+<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../../img/Pasted%20image%2020260612061616.png" data-desc-position="bottom"><img alt="Screenshot" src="../../img/Pasted%20image%2020260612061616.png"></a></p>
+</div>
+</div>
+</div>
+</div>
+<div class="tabbed-block">
+<p>When a new router plugin is identified, it will be documented here!</p>
+</div>
+</div>
+</div>
+<p>Next, we will connect the outputs of the router plugin instances to the appropriate inputs of the YSFX instance that will host THS. This is the step that enables use of THS outside of Reaper as most DAWs do not allow for arbitrary routing of many channels the way we can in wrappers like Metaplugin and Element. It's also important to note that THS expects the stem bus inputs to begin on Channels 3-4, <strong><em>not</em></strong> Channels 1-2. This means that when we connect the router instances to the YSFX that will host THS, we will skip the first two input pins and begin our connections with the second set of pins:</p>
+<div class="tabbed-set tabbed-alternate" data-tabs="5:2"><input checked="checked" id="__tabbed_5_1" name="__tabbed_5" type="radio"><input id="__tabbed_5_2" name="__tabbed_5" type="radio"><div class="tabbed-labels"><label for="__tabbed_5_1">Metaplugin</label><label for="__tabbed_5_2">Element</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<div class="tabbed-set tabbed-alternate" data-tabs="6:3"><input checked="checked" id="__tabbed_6_1" name="__tabbed_6" type="radio"><input id="__tabbed_6_2" name="__tabbed_6" type="radio"><input id="__tabbed_6_3" name="__tabbed_6" type="radio"><div class="tabbed-labels"><label for="__tabbed_6_1">Blue Cat's Connector</label><label for="__tabbed_6_2">JSFX Audio Router</label><label for="__tabbed_6_3">Other Router</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../../img/Pasted%20image%2020260601212243.png" data-desc-position="bottom"><img alt="Screenshot" src="../../img/Pasted%20image%2020260601212243.png"></a></p>
+</div>
+<div class="tabbed-block">
+<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../../img/Pasted%20image%2020260612062532.png" data-desc-position="bottom"><img alt="Screenshot" src="../../img/Pasted%20image%2020260612062532.png"></a></p>
+</div>
+<div class="tabbed-block">
+<p>When a new router plugin is identified, it will be documented here!</p>
+</div>
+</div>
+</div>
+</div>
+<div class="tabbed-block">
+<div class="tabbed-set tabbed-alternate" data-tabs="7:3"><input checked="checked" id="__tabbed_7_1" name="__tabbed_7" type="radio"><input id="__tabbed_7_2" name="__tabbed_7" type="radio"><input id="__tabbed_7_3" name="__tabbed_7" type="radio"><div class="tabbed-labels"><label for="__tabbed_7_1">Blue Cat's Connector</label><label for="__tabbed_7_2">JSFX Audio Router</label><label for="__tabbed_7_3">Other Router</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../../img/Pasted%20image%2020260609190611.png" data-desc-position="bottom"><img alt="Screenshot" src="../../img/Pasted%20image%2020260609190611.png"></a></p>
+</div>
+<div class="tabbed-block">
+<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../../img/Pasted%20image%2020260612061756.png" data-desc-position="bottom"><img alt="Screenshot" src="../../img/Pasted%20image%2020260612061756.png"></a></p>
+</div>
+<div class="tabbed-block">
+<p>When a new router plugin is identified, it will be documented here!</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<p>We can now begin to configure the router instances to receive sound from the senders we previously instantiated on the stem busses. Before proceeding, it's critical to understand the channel assignments THS expects the stem busses to follow:</p>
+<table>
+<thead>
+<tr>
+<th><strong>Stem</strong></th>
+<th><strong>Channel Assignment</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>3-4</td>
+</tr>
+<tr>
+<td>2</td>
+<td>5-6</td>
+</tr>
+<tr>
+<td>3</td>
+<td>7-8</td>
+</tr>
+<tr>
+<td>4</td>
+<td>9-10</td>
+</tr>
+<tr>
+<td>5</td>
+<td>11-12</td>
+</tr>
+<tr>
+<td>6</td>
+<td>13-14</td>
+</tr>
+<tr>
+<td>7</td>
+<td>15-16</td>
+</tr>
+<tr>
+<td>8</td>
+<td>17-18</td>
+</tr>
+</tbody>
+</table>
+<p>Based on the connection diagram we've created, this means that, from left to right, our router instances will be used for stems 1, 2, 3, and 4.</p>
+<p>Begin by opening the router connected to input pins 3-4 of the YSFX instance that will host THS. This will be the Stem 1 receiver.</p>
+<div class="tabbed-set tabbed-alternate" data-tabs="8:3"><input checked="checked" id="__tabbed_8_1" name="__tabbed_8" type="radio"><input id="__tabbed_8_2" name="__tabbed_8" type="radio"><input id="__tabbed_8_3" name="__tabbed_8" type="radio"><div class="tabbed-labels"><label for="__tabbed_8_1">Blue Cat's Connector</label><label for="__tabbed_8_2">JSFX Audio Router</label><label for="__tabbed_8_3">Other Router</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<p>By default, Connector will appear similar to the following:</p>
+<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../../img/Pasted%20image%2020260601213229.png" data-desc-position="bottom"><img alt="Screenshot" src="../../img/Pasted%20image%2020260601213229.png"></a></p>
+<p>Begin by enabling <strong>RCV</strong> mode. Connector will then appear similar to the following:</p>
+<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../../img/Pasted%20image%2020260601213327.png" data-desc-position="bottom"><img alt="Screenshot" src="../../img/Pasted%20image%2020260601213327.png"></a></p>
+<p>Since we previously setup all our sender nodes and started with the default port assignment of <code>8080</code>, this instance of Connector will immediately establish a connection with our Stem 1 sender. Since we named that instance <code>Stem_1_TX</code>, we get a visual indicator of the sending instance's name just below <strong>RECEIVE FROM</strong>. This can be a very handy tool for troubleshooting connections if you run into problems. Optionally, we can update the <strong>Name</strong> parameter of our new receiver node. This will make it so the sender node shows something other than <code>Anonymous</code> below its analogous <strong>SEND TO</strong> indicator. Here, we will name the Connector instance <code>Stem_1_RX</code> (receive):</p>
+<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../../img/Pasted%20image%2020260601213707.png" data-desc-position="bottom"><img alt="Screenshot" src="../../img/Pasted%20image%2020260601213707.png"></a></p>
+<p>Next, open the Connector instance connected to input pins 5-6 of YSFX. This will be the Stem 2 receiver. Then, enable <strong>RCV</strong> mode. Connector will now look like the following:</p>
+<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../../img/Pasted%20image%2020260601213917.png" data-desc-position="bottom"><img alt="Screenshot" src="../../img/Pasted%20image%2020260601213917.png"></a></p>
+<p>Unlike the first Connector receiver, this instance will not automatically connect to the next stem. To make the connection, we need to set the <strong>Port</strong> parameter to match the value assigned to the Stem 2 sender. If you followed the example from above, the correct port will be <code>8081</code>. Once we set <strong>Port</strong> to <code>8081</code> and press Enter, Connector will immediately establish a connection to the Stem 2 sender that we named <code>Stem_2_TX</code>:</p>
+<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../../img/Pasted%20image%2020260601214119.png" data-desc-position="bottom"><img alt="Screenshot" src="../../img/Pasted%20image%2020260601214119.png"></a></p>
+<p>Repeat this process for as many stems as you would like to route into THS, up to the maximum of 8 stems.</p>
+<div class="admonition tip">
+<p class="admonition-title">Connector Presets – Receiver</p>
+<p>To simplify the process of setting up THS in future projects, you can save the configurations you set for your receiver instances of Connector as presets. That way, you can simply recall the presets to configure your receiver instances of Connector.</p>
+</div>
+</div>
+<div class="tabbed-block">
+<p>By default, YSFX will look similar to the following:</p>
+<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../../img/Pasted%20image%2020260612074828.png" data-desc-position="bottom"><img alt="Screenshot" src="../../img/Pasted%20image%2020260612074828.png"></a></p>
+<p>To load the audio router, click <strong>Load</strong> and navigate to the folder where you saved your copy of the plugin. Select the JSFX file for the audio router, and then click <strong>Open</strong>. Once loaded, YSFX should look similar to the following:</p>
+<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../../img/Pasted%20image%2020260612061820.png" data-desc-position="bottom"><img alt="Screenshot" src="../../img/Pasted%20image%2020260612061820.png"></a></p>
+<p>We will now configure the router as a receiver. Since this receiver corresponds to Stem Bus 1, we will set the <strong>Router Channel</strong> to 1, change the <strong>Router Type</strong> to <strong>Receiver</strong>, and set the <strong>Router Enabled</strong> toggle to <strong>Enabled</strong>. When finished, the router will appear similar to the following:</p>
+<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../../img/Pasted%20image%2020260612061826.png" data-desc-position="bottom"><img alt="Screenshot" src="../../img/Pasted%20image%2020260612061826.png"></a></p>
+<p>This is all that is needed to configure the receiver instance of the audio router. Repeat this process for as many stem as you would like to route into THS, up the maximum of 8 stems. As you configure each additional receiver, make sure to update the <strong>Router Channel</strong> to match the corresponding sender's channel.</p>
+</div>
+<div class="tabbed-block">
+<p>When a new router plugin is identified, it will be documented here!</p>
+</div>
+</div>
+</div>
+<h2 id="ysfx-for-ths">YSFX for THS</h2>
+<p>Now that we have connected and configured all the receiver instances of Connector, we can configure the master instance of THS. Double-click the YSFX node in your wrapper plugin. By default, it will look like the following:</p>
+<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../../img/Pasted%20image%2020260601214615.png" data-desc-position="bottom"><img alt="Screenshot" src="../../img/Pasted%20image%2020260601214615.png"></a></p>
+<p>Begin by loading THS, which will initially look like the following:</p>
+<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../../img/Pasted%20image%2020260601214656.png" data-desc-position="bottom"><img alt="Screenshot" src="../../img/Pasted%20image%2020260601214656.png"></a></p>
+<p>Since this is our master instance of THS, we can now change the <strong>Topology</strong> parameter from <em>Stem Sender (Bus)</em> to <strong><em>Master Summer (Main)</em></strong>. Once this parameter has changed, THS should now appear as follows:</p>
+<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../../img/Pasted%20image%2020260601214818.png" data-desc-position="bottom"><img alt="Screenshot" src="../../img/Pasted%20image%2020260601214818.png"></a></p>
+<p>Assuming all stem bus instances of THS have been configured correctly, you should see a dim green indicator next to each configured stem. If you believe you should have more green indicators than what you currently see, revisit the <strong>Stem ID</strong> assignment of your stem bus instances of THS to verify that each stem is assigned a unique ID.</p>
+<p>To verify that THS is fully configured and ready for use, play some sound through your project's stem busses. In Cubase, I can do this by instantiating the TestGenerator plugin to play test tones. If everything is working correctly, the green indicators in the master bus instance of THS should begin to flash bright green. This means that THS is detecting signal input from each bus. If everything was configured correctly, the indicator for all configured and connected channels should periodically flash while playing sound.</p>
+<p>If any of the channel indicators are not blinking, go back and verify the configuration of the sender and receiver nodes of your router plugin.</p>
+<div class="tabbed-set tabbed-alternate" data-tabs="9:3"><input checked="checked" id="__tabbed_9_1" name="__tabbed_9" type="radio"><input id="__tabbed_9_2" name="__tabbed_9" type="radio"><input id="__tabbed_9_3" name="__tabbed_9" type="radio"><div class="tabbed-labels"><label for="__tabbed_9_1">Blue Cat's Connector</label><label for="__tabbed_9_2">JSFX Audio Router</label><label for="__tabbed_9_3">Other Router</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<p>If the sender/receiver pairs are configured correctly, the level meter on the right-hand side of your Connector receivers will show signal:</p>
+<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../../img/Pasted%20image%2020260601215608.png" data-desc-position="bottom"><img alt="Screenshot" src="../../img/Pasted%20image%2020260601215608.png"></a></p>
+</div>
+<div class="tabbed-block">
+<p>There are currently no visual indicators for the JSFX Audio Router. Should you encounter trouble, verify that the <strong>Router Channel</strong> and <strong>Router Type</strong> options are set correctly across all sender and receiver instances.</p>
+</div>
+<div class="tabbed-block">
+<p>When a new router plugin is identified, it will be documented here!</p>
+</div>
+</div>
+</div>
+<h2 id="wrapper-recall">Wrapper Recall</h2>
+<div class="tabbed-set tabbed-alternate" data-tabs="10:2"><input checked="checked" id="__tabbed_10_1" name="__tabbed_10" type="radio"><input id="__tabbed_10_2" name="__tabbed_10" type="radio"><div class="tabbed-labels"><label for="__tabbed_10_1">Metaplugin</label><label for="__tabbed_10_2">Element</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<div class="admonition tip">
+<p class="admonition-title">Metaplugin Presets</p>
+<p>To simplify the process of setting up THS in future projects, you can save your Metaplugin setup by clicking the <strong>User presets</strong> tab, then click <strong>Save new preset</strong>. This will save all the parameters and connections for the plugins in your diagram and can significantly reduce the time needed to setup the master instance of THS.</p>
+</div>
+</div>
+<div class="tabbed-block">
+<div class="admonition tip">
+<p class="admonition-title">Element Sessions</p>
+<p>To simplify the process of setting up THS in future projects, you can save your Element setup by clicking the hamburger menu icon in the top right corner of the plugin, then click <strong>Save Session As...</strong>. This will save all the parameters and connections for the plugins in your diagram and can significantly reduce the time needed to setup the master instance of THS.</p>
+</div>
+</div>
+</div>
+</div>
+<h2 id="next-steps">Next Steps</h2>
+<p>After completing the procedure documented on this page, THS should be fully configured for operation in your DAW using the Wrapper and Router Method!</p>
+<p>If you wish to add TAM(D) to your project, you can proceed to the <a href="../TAMD_Channels/">Channels</a> setup page. I would also strongly encourage you to review the TAM(D) <a href="../TAMD_DAW_Considerations/">DAW-Specific Considerations</a> page so you are aware of any DAW-specific constraints that may affect your use of TAM(D).</p>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+  <script>var tabs=__md_get("__tabs");if(Array.isArray(tabs))e:for(var set of document.querySelectorAll(".tabbed-set")){var labels=set.querySelector(".tabbed-labels");for(var tab of tabs)for(var label of labels.getElementsByTagName("label"))if(label.innerText.trim()===tab){var input=document.getElementById(label.htmlFor);input.checked=!0;continue e}}</script>
+
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    
+      
+      <nav class="md-footer__inner md-grid" aria-label="Footer">
+        
+          
+          <a href="../WRM_THS_Stem_Busses/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Stem Busses">
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"></path></svg>
+            </div>
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Previous
+              </span>
+              <div class="md-ellipsis">
+                Stem Busses
+              </div>
+            </div>
+          </a>
+        
+        
+          
+          <a href="../SCM_DAW_Considerations/" class="md-footer__link md-footer__link--next" aria-label="Next: DAW-Specific Considerations">
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Next
+              </span>
+              <div class="md-ellipsis">
+                DAW-Specific Considerations
+              </div>
+            </div>
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11z"></path></svg>
+            </div>
+          </a>
+        
+      </nav>
+    
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["navigation.footer", "content.tabs.link"], "search": "../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.79ae519e.min.js"></script>
+      
+        <script src="../../javascripts/mathjax.js"></script>
+      
+        <script src="https://unpkg.com/mathjax@3/es5/tex-mml-chtml.js"></script>
+      
+        <script src="../../javascripts/katex.js"></script>
+      
+        <script src="https://unpkg.com/katex@0/dist/katex.min.js"></script>
+      
+        <script src="https://unpkg.com/katex@0/dist/contrib/auto-render.min.js"></script>
+      
+    
+  
+<script id="init-glightbox">const lightbox = GLightbox({"touchNavigation": true, "loop": false, "zoomable": true, "draggable": true, "openEffect": "zoom", "closeEffect": "zoom", "slideEffect": "slide"});
+document$.subscribe(()=>{ lightbox.reload(); });
+</script></body></html>
